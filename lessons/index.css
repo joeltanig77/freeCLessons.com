@@ -1,0 +1,21 @@
+#mainTitle {
+    background: white;
+    color: black;
+    text-align: center;
+    font-size: 40px;
+}
+.listElements {
+    font-size: 25px;
+}
+
+.moreInfo {
+    font-size: 25px;
+}
+
+#aboutButton {
+    text-align: right;
+}
+
+.chapters {
+    font-size: 35px
+}

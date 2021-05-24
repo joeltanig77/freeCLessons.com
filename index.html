@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="lessons/index.css">
+    <style>
+        {box-sizing: border-box;}
+        .column {
+            width: 50%;
+            float: left;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
+<h1 id="mainTitle">Welcome to freeClessions.com</h1>
+<p id="aboutButton"><a href="misc/about.html">About</a> </p>
+<div class="row">
+    <div class="column" style="background-color: white">
+        <h2 class="chapters">Introduction to C</h2>
+        <p class="moreInfo"> This module is for beginners of coding/C who need a introduction of the language
+        and the syntax of what C provides </p>
+        <ol class="listElements">
+            <li><a href="lessons/lesson1.html">Intro to C and its Syntax</a></li>
+            <li><a href="lessons/lesson2.html">Very basic data structures</a></li>
+            <li><a href="lessons/lesson3.html">2D Arrays</a></li>
+        </ol>
+        <h2>Variable Types</h2>
+        <p class="moreInfo">Put lessons here</p>
+        <h2>Arithmetic</h2>
+        <p class="moreInfo">Put lessons here</p>
+    </div>
+    <div class="column" style="background-color:white">
+        <h2>Column 2</h2>
+        <p class="moreInfo">More stuff</p>
+    </div>
+</div>
+<footer>Copyright <a href="misc/about.html">Joel Tanig</a>, <a href="misc/about.html">Desi Ah Yek</a> 2021</footer>
 
 </body>
 </html>
