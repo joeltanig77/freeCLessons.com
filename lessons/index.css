@@ -9,7 +9,7 @@
   width: 90%;
   padding-left: 2%;
   padding-right:2%;
-  background: green;
+  background: #f0ebcc;
   text-align: center;
 }
 
@@ -17,7 +17,7 @@
   width: 90%;
   padding-left: 2%;
   padding-right:2%;
-  background: green;
+  background: #f0ebcc;
   
 }
 
@@ -35,4 +35,8 @@
 
 .chapters {
     font-size: 35px
+}
+
+.mainBody {
+    background-color: #3d84b8;
 }
