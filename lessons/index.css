@@ -1,9 +1,18 @@
 #mainTitle {
-    background: white;
+
     color: black;
     text-align: center;
     font-size: 40px;
 }
+
+.boxElement{
+  width: 90%;
+  padding-left: 2%;
+  padding-right:2%;
+  background: green;
+  text-align: center;
+}
+
 .listElements {
     font-size: 25px;
 }
