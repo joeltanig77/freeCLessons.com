@@ -5,12 +5,20 @@
     font-size: 40px;
 }
 
-.boxElement{
+.boxTitleElement{
   width: 90%;
   padding-left: 2%;
   padding-right:2%;
   background: green;
   text-align: center;
+}
+
+.boxElement{
+  width: 90%;
+  padding-left: 2%;
+  padding-right:2%;
+  background: green;
+  
 }
 
 .listElements {
