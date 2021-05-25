@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<!---Intro to C and its Syntax lesson--->
+<!---Print statements and basic data types in C lesson--->
 <html lang="en">
 <head>
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
-    <title>Intro to C and its Syntax lesson</title>
+    <title>Print statements and basic data types in C</title>
 
 </head>
 <body>
-<h1 class="textAlignNoColor">Intro to C and its Syntax</h1>
+<h1 class="textAlignNoColor">Print statements and basic data types in C</h1>
 <h2>&nbsp;Introduction</h2>
-<p>Welcome to the first lesson on C and its Syntax. On this page, you will learn about the syntax of C, simple data
-types, how to compile C code, if statements, for loops and while loops! At the end of the lesson we will also cover
-how to make a Makefile so compiling your C code will be faster by just typing "make" into the terminal. This lesson will
+<p>Welcome to the first lesson on C. On this page, you will learn about the syntax of C, simple data
+types, how to compile C code, and how to print in the terminal. This lesson will
 be split up into subsections so feel free to skip around.</p>
 
 <h2>&nbsp;Print Statements in C</h2>
@@ -23,7 +22,7 @@ to do is write a main function which is what your program will run first. The fu
 <pre>
     #include &lt;stdio.h&gt
     int main() {
-    printf("Hello World\n", %s);
+    printf("%s","Hello World\n");
  }</pre>
 <p>Don't worry about what the include statement or what the %s is doing, just know that we
     need it in order to use the print function and to print a string in C. Also to note that the "\n" indicates that we want
@@ -39,7 +38,7 @@ into a object file for you to run.</p>
 <p>After doing this you should get the output of "Hello World" on the terminal. Congrats you made your first program! Below
     are more examples of how printf can be used.</p>
 
-<h3>Print Statement in C (int and a string)</h3>
+<h3>Print Statement in C with a int and a string</h3>
 <p>Above we printed a string of "Hello World". If you wanted to print an integer and a string together, we can edit
 the above code to say...</p>
 <pre>
@@ -56,13 +55,24 @@ as we did not use a variable to concatenate a string but for a more complex prog
 <div data-pym-src=https://www.jdoodle.com/embed/v0/3lAA></div>
 <script src=”https://www.jdoodle.com/assets/jdoodle-pym.min.js” type=”text/javascript”></script>
 
-
-<h2>&nbspStrings</h2>
+<h2>&nbsp;Simple Data Types in C</h2>
+<h3>&nbsp;Strings</h3>
 <p>In you did the following exercise above you might have recognized why we did "" on the printf statement. The reason
 that is needed is because the "" means that the letters inside we are dealing with are a String datatype.
-A String datatype is an array of characters that ends with a null terminator of '\0'. This terminaltor is important as it tells
+A String datatype is an array of characters that ends with a null terminator of '\0'. This terminator is important as it tells
 the program the string has ended and it does not need to look further for more data. This fine detail will be important for lessons
 later on for other functions like strlen (string length) and scanf. </p>
-
+<h3>&nbsp;Integers</h3>
+<p>An integer just like in math is a whole number that can be positive, negative, or a zero. As long as it does not have
+a decimal, the number is stated to be a integer datatype. Example include 100, 234, and -38462. <strong> Warning: integers
+    can be strings  if you allow it to be, be careful on where you wrap your quotations. If they are wrapped in
+    quotations, they will follow the rules of strings and you will not be able to do math with them. </strong> </p>
+<h3>&nbsp;Doubles</h3>
+<p>A double is a number that contains a decimal point. They can contain 15 digits in total and you can do math with this type. If you want
+to print a double, you can do that by using the %f format specifier when you are using printf</p>
+<h2>&nbsp;Challenge</h2>
+<p>Print out the following statement in the terminal</p>
+<pre>Robert is 22 years old and Sophia in 57 years old. They both adopted a son named Clifford who decided to
+go into a medical degree at a very young age of 7.1323 years old.</pre>
 </body>
 </html>
