@@ -2,9 +2,67 @@
 <!---Intro to C and its Syntax lesson--->
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
-    <title>Introduction to C</title>
+    <title>Intro to C and its Syntax lesson</title>
+
 </head>
 <body>
+<h1 class="textAlignNoColor">Intro to C and its Syntax</h1>
+<h2>&nbsp;Introduction</h2>
+<p>Welcome to the first lesson on C and its Syntax. On this page, you will learn about the syntax of C, simple data
+types, how to compile C code, if statements, for loops and while loops! At the end of the lesson we will also cover
+how to make a Makefile so compiling your C code will be faster by just typing "make" into the terminal. This lesson will
+be split up into subsections so feel free to skip around.</p>
+
+<h2>&nbsp;Print Statements in C</h2>
+<p>First lets start of with something relatively simple and that is printing a statement in C. Tou can follow along if you want
+    by making a new C file and typing in the C code we are about to write. The first thing we need
+to do is write a main function which is what your program will run first. The function will look like...</p>
+
+<pre>
+    #include &lt;stdio.h&gt
+    int main() {
+    printf("Hello World\n", %s);
+ }</pre>
+<p>Don't worry about what the include statement or what the %s is doing, just know that we
+    need it in order to use the print function and to print a string in C. Also to note that the "\n" indicates that we want
+    to print a new line after "Hello World". We can then run it by opening our terminal and cd all the way to our program.
+    Once we are in the folder of our program we can type this into
+    our terminal...(note you must have <a href="https://gcc.gnu.org/install/download.html">gcc</a> installed for this to work)
+</p>
+<pre>gcc -g -std=c99 -Wall -pedantic -o insertAnyName yourNameOfYourFile.c</pre>
+<p>Don't worry about what this line above really does, just know that it takes your C code, and turns it
+into a object file for you to run.</p>
+<p>We finally run the program by typing in this in our terminal</p>
+<pre>./insertAnyName</pre>
+<p>After doing this you should get the output of "Hello World" on the terminal. Congrats you made your first program! Below
+    are more examples of how printf can be used.</p>
+
+<h3>Print Statement in C (int and a string)</h3>
+<p>Above we printed a string of "Hello World". If you wanted to print an integer and a string together, we can edit
+the above code to say...</p>
+<pre>
+    #include &lt;stdio.h&gt
+    int main() {
+    printf("My favorite number is %d\n", 94);
+ }</pre>
+<p>Again to note a %s is equal to a string format and  %d is equal to a decimal/integer formatter which is how C
+knows which type we want to print. We will talk more about why data types like strings and integers are so important to
+memorize later on but for right now just know that this is how you print in C. %s was not needed for the example above
+as we did not use a variable to concatenate a string but for a more complex program you will see why %s is needed.</p>
+
+<!--TODO: Try and implement compiler later-->
+<div data-pym-src=https://www.jdoodle.com/embed/v0/3lAA></div>
+<script src=”https://www.jdoodle.com/assets/jdoodle-pym.min.js” type=”text/javascript”></script>
+
+
+<h2>&nbspStrings</h2>
+<p>In you did the following exercise above you might have recognized why we did "" on the printf statement. The reason
+that is needed is because the "" means that the letters inside we are dealing with are a String datatype.
+A String datatype is an array of characters that ends with a null terminator of '\0'. This terminaltor is important as it tells
+the program the string has ended and it does not need to look further for more data. This fine detail will be important for lessons
+later on for other functions like strlen (string length) and scanf. </p>
+
 </body>
 </html>

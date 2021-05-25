@@ -40,3 +40,7 @@
 .mainBody {
     background-color: #3d84b8;
 }
+
+.textAlignNoColor {
+    text-align: center;
+}
