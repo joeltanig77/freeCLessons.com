@@ -15,7 +15,7 @@ types, how to compile C code, and how to print in the terminal. This lesson will
 be split up into subsections so feel free to skip around.</p>
 
 <h2>&nbsp;Print Statements in C</h2>
-<p>First lets start of with something relatively simple and that is printing a statement in C. Tou can follow along if you want
+<p>First lets start of with something relatively simple and that is printing a statement in C. You can follow along if you want
     by making a new C file and typing in the C code we are about to write. The first thing we need
 to do is write a main function which is what your program will run first. The function will look like...</p>
 
@@ -23,12 +23,13 @@ to do is write a main function which is what your program will run first. The fu
     #include &lt;stdio.h&gt
     int main() {
     printf("%s","Hello World\n");
+    return 0;
  }</pre>
 <p>Don't worry about what the include statement or what the %s is doing, just know that we
     need it in order to use the print function and to print a string in C. Also to note that the "\n" indicates that we want
     to print a new line after "Hello World". We can then run it by opening our terminal and cd all the way to our program.
     Once we are in the folder of our program we can type this into
-    our terminal...(note you must have <a href="https://gcc.gnu.org/install/download.html">gcc</a> installed for this to work)
+    our terminal...(note you must have <a href="https://gcc.gnu.org/install/index.html">gcc</a> installed for this to work)
 </p>
 <pre>gcc -g -std=c99 -Wall -pedantic -o insertAnyName yourNameOfYourFile.c</pre>
 <p>Don't worry about what this line above really does, just know that it takes your C code, and turns it
@@ -45,6 +46,7 @@ the above code to say...</p>
     #include &lt;stdio.h&gt
     int main() {
     printf("My favorite number is %d\n", 94);
+    return 0;
  }</pre>
 <p>Again to note a %s is equal to a string format and  %d is equal to a decimal/integer formatter which is how C
 knows which type we want to print. We will talk more about why data types like strings and integers are so important to
@@ -70,9 +72,5 @@ a decimal, the number is stated to be a integer datatype. Example include 100, 2
 <h3>&nbsp;Doubles</h3>
 <p>A double is a number that contains a decimal point. They can contain 15 digits in total and you can do math with this type. If you want
 to print a double, you can do that by using the %f format specifier when you are using printf</p>
-<h2>&nbsp;Challenge</h2>
-<p>Print out the following statement in the terminal</p>
-<pre>Robert is 22 years old and Sophia in 57 years old. They both adopted a son named Clifford who decided to
-go into a medical degree at a very young age of 7.1323 years old.</pre>
 </body>
 </html>
