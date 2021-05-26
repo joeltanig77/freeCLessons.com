@@ -4,11 +4,11 @@
 <head>
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
-    <title>Print statements and basic data types in C</title>
+    <title>Print Statements and Basic Data Types in C</title>
 
 </head>
 <body>
-<h1 class="textAlignNoColor">Print statements and basic data types in C</h1>
+<h1 class="textAlignNoColor">Print Statements and Basic Data Types in C</h1>
 <h2>&nbsp;Introduction</h2>
 <p>Welcome to the first lesson on C. On this page, you will learn about the syntax of C, simple data
 types, how to compile C code, and how to print in the terminal. This lesson will
@@ -25,7 +25,10 @@ to do is write a main function which is what your program will run first. The fu
     printf("%s","Hello World\n");
     return 0;
  }</pre>
-<p>Don't worry about what the include statement or what the %s is doing, just know that we
+<p>   Because this is a very simple program, we will only use the main
+    but note that you can create other functions that will be called in main.
+    For more information about functions, visit our functions lesson.
+    Also don't worry about what the include statement or what the %s is doing, just know that we
     need it in order to use the print function and to print a string in C. Also to note that the "\n" indicates that we want
     to print a new line after "Hello World". We can then run it by opening our terminal and cd all the way to our program.
     Once we are in the folder of our program we can type this into
@@ -58,8 +61,11 @@ as we did not use a variable to concatenate a string but for a more complex prog
 <script src=”https://www.jdoodle.com/assets/jdoodle-pym.min.js” type=”text/javascript”></script>
 
 <h2>&nbsp;Simple Data Types in C</h2>
+<h3>Characters</h3>
+<p>A character in C is a single byte like a number, symbol or a letter. For more information about bytes visit the byte
+lesson for more information.</p>
 <h3>&nbsp;Strings</h3>
-<p>In you did the following exercise above you might have recognized why we did "" on the printf statement. The reason
+<p>If you did the following exercise above you might have recognized why we did "" on the printf statement. The reason
 that is needed is because the "" means that the letters inside we are dealing with are a String datatype.
 A String datatype is an array of characters that ends with a null terminator of '\0'. This terminator is important as it tells
 the program the string has ended and it does not need to look further for more data. This fine detail will be important for lessons
@@ -72,5 +78,71 @@ a decimal, the number is stated to be a integer datatype. Example include 100, 2
 <h3>&nbsp;Doubles</h3>
 <p>A double is a number that contains a decimal point. They can contain 15 digits in total and you can do math with this type. If you want
 to print a double, you can do that by using the %f format specifier when you are using printf</p>
+<h3>&nbsp;Variables in C</h3>
+<p>Like all programing languages, a variable is a storage location that
+    is paired with a name which stores data that can be known or unknown to the programmer. Think of it as storage container
+that can update as the program runs and hits certain cases like an <a href="lesson2.html">if statement.</a>
+If you want to create a variable named myNumber that stores a integer, you can do that by doing...</p>
+<pre>
+    #include &lt;stdio.h&gt
+    int main() {
+    int myNumber = 2;
+    return 0;
+ }
+</pre>
+<p>You can then easily print that number by doing...</p>
+<pre>
+    #include &lt;stdio.h&gt
+    int main() {
+    int myNumber = 2;
+    printf("My favorite number is %d\n", myNumber);
+    return 0;
+ }
+</pre>
+<p>If you want to create a variable that stores a string and a double that gets printed, you can do that by doing...</p>
+<pre>
+    #include &lt;stdio.h&gt
+    int main() {
+    double myDecimalNumber = 2.0;
+    char str[] = "inches"
+    printf("I grew %f, %s\n", myDecimalNumber, str);
+    return 0;
+ }
+</pre>
+<p>For assigning a string variable in C it is important to allocate the amount of space the string will take up.
+In the above example, we can see that we did not do this as it was not needed because we were directly assigning it to
+to the variable called string right away. But what happens if we wanted to make an empty string variable that we will not
+use until later on. This example I described would look like...</p>
+<pre>
+    #include &lt;stdio.h&gt
+    int main() {
+    // We put 25 inside the brackets so we want to allocate space for at least a 25 string word. This number can be any integer
+    so long as it at least fits the string length you want to store always try and aim for the smallest number that
+    will fit the the string you want to save
+    char str[25];
+    // We do random stuff here but after we do this random stuff...
+    // How do we assign a empty variable called str to a string here?
+    return 0;
+ }
+</pre>
+<p> If we wanted to assign the variable str after it was assigned as an empty value or "NULL" (which means empty/zero value) we
+can use the function strcpy (string copy) to overwrite the empty value into a value we want. The above example will now look like...
+</p>
+
+<pre>
+    #include &lt;stdio.h&gt
+    #include &lt;string.h&gt;
+    int main() {
+    char str[25];
+    strcpy("Apple",str);
+    printf("%s",str);
+    return 0;
+ }
+</pre>
+<p>For more information on the c library's with these type of built in functions, visit our <a href="lesson5.html">C Library Lesson </a>
+</p>
+
+
+
 </body>
 </html>
