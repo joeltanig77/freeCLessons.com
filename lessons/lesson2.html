@@ -6,11 +6,49 @@
     <meta charset="UTF-8">
     <title>Basic logic in C<</title>
 </head>
-<h1 class="textAlignNoColor">Basic logic in C</h1>
+<h1 class="textAlignNoColor">Basic Logic in C</h1>
 <body>
 <h2>&nbsp;Introduction</h2>
-<p>On this page you will learn about the how if statements work in C and how they are used properly in order
-to develop a program. You wil also learn about what a variable is and how they are used to save and manipulate data</p>
+<p>On this page you will learn about Basic logic in C and how these can be solved using if statements, boolean statements,
+while loops and for loops. This lesson will be split up into subsections so feel free to skip around</p>
 
+<h2>&nbsp;If and Else Statements</h2>
+<p>An If statement is a programming conditional statement that passes as "True", will run a set of statements/commands right after.
+The If statement can also be deemed as "False", that in which a different set of statements will run. These statements are
+an XOR type which means you will never have this statement be both "True" and "False". Here is one example of an if
+statement in C</p>
+<pre>
+    int usersNumber = 8;
+    if (userNumber == 8) {
+        printf("%s","You guessed my number! Go buy a lottery ticket or something!");
+    }
+    else {
+        printf("%s", "You guessed the wrong number");
+    }
+</pre>
+<p>What the code above did was checked if the variable <em>userNumber</em> was equal to the integer 8. Because it was,
+the block inside the curly brackets executed the command which was to print the statement <em>You guessed my number! Go buy a lottery ticket or something!
+    </em>. But, if that statement was not true, the else statement would be activated and the print statement of
+<em>You guessed the wrong number</em> would be printed instead. Take note that you can also combine if statements as well like this...
+</p>
+<pre>
+    int usersNumber = 10;
+    if (userNumber > 0) {
+        printf("%s","This number is greater than 0!\n");
+    }
+    else {
+        printf("%s","You a negative number, try again");
+        exit(0);
+    }
+    if (userNumber > 7) {
+        printf("%s","This number is greater than 7!"\n);
+    }
+    if (userNumber == 10) {
+        printf("%s", "10 is my number\n");
+    }
+</pre>
+<p> From this example above, the first three if statements will activate with it's associated print statements, but the else
+statement will not activate not unless the usersNumber was a negative number, that in which would trigger that print statement
+and exit the program using exit(0). </p>
 </body>
 </html>
