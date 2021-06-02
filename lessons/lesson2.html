@@ -54,7 +54,7 @@ the block inside the curly brackets executed the command which was to print the 
 statement will not activate not unless the usersNumber was a negative number, that in which would trigger that print statement
 and exit the program using exit(0).</p>
 </body>
-<p>Finally there is also a conditional statement called <em>elif</em> or else if that activates only once
+<p>There is also a conditional statement called <em>elif</em> or else if that activates only once
 and can only be used when chained with other elif or if statements. Here is an example on how elif is used...</p>
 <pre>
     int usersNumber = 10;
@@ -77,6 +77,23 @@ and can only be used when chained with other elif or if statements. Here is an e
     elif only runs once in a block of if statements and so if a conditional statement is "True" for a elif,
     it will run that set of commands inside the curly brackets then exit immediately. You will learn quickly as
 you develop programs why elif will later on become your best friend for certain situations.</p>
+<h3>Nested if statement</h3>
+<p>Finally, you can also nest your if statements, in other words,
+    have an if statement inside an if statement. Below is sample code of what a
+nested if statement would look like...</p>
+
+<pre>
+    int myNumber1 = 50;
+    int myNumber2 = 100;
+    if (myNumber1 == 50) {
+        if (myNumber2 = 100) {
+            printf("%s\n","Nested if statement!");
+        }
+    }
+    else {
+        printf("%s\n","Error");
+    }
+</pre>
 
 <h2>&nbsp;Comparison and Equality Operations</h2>
 <p>In the examples above you may have realized we used equality and comparisons tests
@@ -210,8 +227,10 @@ what we did above by doing...</p>
 
 <p>Booleans are an amazing tool for basic logic and will be used more in the later lessons for when we
 use loops.</p>
+<p><strong>Note: When comparing a boolean, the integer 1 is defined as "true" and any other number but one will
+be defined as a "false"</strong></p>
 
-<h2>While loops</h2>
+<h2>&nbsp;While loops</h2>
 <p>Loops are a tool in C or in any programming language that can do tasks a million times over without yourself doing
 a task a million times over. The way you loop things can change the way you solve programming challenges and it takes
 some finesse to try and develop the perfect loop. Here is a simple example of a while loop in action...</p>
@@ -225,14 +244,108 @@ some finesse to try and develop the perfect loop. Here is a simple example of a 
     printf("%s\n","There is no beer left!");
 </pre>
 
+<p>The while loop is set up as...</p>
+<pre>
+    while(comparison) {
+        statements
+    }
+</pre>
+
 <p>As you can see above, these loops in are life savors when it comes to doing a command over and over again as
 instead of the programmer doing 100 print statements, the programmer just has to set a while loop
 that sets up the 100 print statements.</p>
 
+<p>You can also do a while loop that has argument of a boolean variable. Here is an example of that in action...</p>
 
-<!--TODO: Talk about loops-->
+<pre>
+    int flag = 1; // Set the boolean flag to "true" which is represented by the integer 1
+    int count = 10;
+    while (flag) {
+        if (count == 0) {
+            printf("%s\n","The count is over");
+            flag = 0;
+        }
+        elif (count != 0) {
+            printf("%s\n","%d\n","The count is", count);
+            count -= 1;
+        }
+    }
+    // We get here when the flag is set to 0 or "false"
+</pre>
+
+<p>Finally, you can also have while loops that loop forever with a while true statement, these statements are used when
+you want to keep doing something until an argument is met and that is when we call a break to stop the while loop from occurring.
+Here is a example of a while true loop in action...</p>
+
+<pre>
+    int count = 100;
+    while(1) { // This loop will go one forever, so always be sure you stop the loop with a break
+        printf("%s","%d\n","The count is",count);
+        count -= 1;
+        if (count == 0) {
+            printf("%s\n","The count is over");
+            break;  // Exit the while loop
+        }
+    }
+    printf("%s\n","I am free!!!!");
+</pre>
+
+<p>As you can see above, we recoded the second example of the while loop but used a while true loop
+instead and used the command break to stop the while loop from happening. In future lessons you will see in detail why
+how these tools like break is useful for future programs you will create.</p>
+
+<p><strong>Note: Remember, break statements exit the while loop from the point you create it, make sure you place the break
+properly or else your program may skip parts in your code that you indented to run.</strong></p>
 
 
+<h2>&nbsp;For loops</h2>
+<p>A for loop is another type of loop like a while loop that has a starting point and and an end point. Think of it as a
+more advanced while loop that has more control in when it stops. Here is an example of a for loop in action.</p>
 
+<pre>
+    for (int i = 0; i < 10; i++) {
+        // Prints the number 1-9
+        printf("%s","%d\n","Iteration",i);
+    }
+</pre>
+
+<p>You can also do for loops by comparing an int variable and incrementing by a integer that is not 1
+An example would be...</p>
+
+<pre>
+    for (int i = 2; i <= 10; i += 2) {
+        // Prints the integers 2-10
+        printf("%d\n",i);
+    }
+</pre>
+
+<p>A for loop is set up as...</p>
+<pre>
+    for(start variable, comparison, incrementer) {
+        statements
+    }
+</pre>
+<ul>
+    <li>The start variable is at what integer you want to for loop to start at</li>
+    <li>The comparison is what compares the start variable to the target integer. If the comparison is "false" at any point
+    the for loop stops</li>
+    <li>The incrementer is a counter and you set it to how many you want to increase the incrementer by after
+        each iteration of the for loop. The ++ means increase by one</li>
+</ul>
+<p>While the for loop can do the exact same things as a while loop, a for loop allows more control and will be used
+often than a whole loop in a program. Based on the situation, you will have to decide what it best for your program, a while loop
+or a for loop.</p>
+<h3>Nested for loops</h3>
+<p>You can also nest for loops which is a for loops inside a for loop. These loops are used mainly for 2D arrays which we will talk
+about in the next lesson of Arrays and 2D Arrays. Below is the format of what a nested for loops looks like...</p>
+
+<pre>
+    for(start variable, comparison, incrementer) {
+        statements
+            for(start variable, comparison, incrementer) {
+                statements
+            }
+    }
+</pre>
 
 </html>

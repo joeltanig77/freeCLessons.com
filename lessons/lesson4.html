@@ -8,11 +8,11 @@
   <a href="../index.html">
   <img  alt="" src="freecLessonsIcon.png" >
 </a>
-  <center>
+  <div style="text-align: center;">
 <h1>
   Debugging and Troubleshooting
 </h1>
-</center>
+</div>
 
 <h2>
   Introduction
@@ -21,7 +21,7 @@
 <p> In this section you will learn the importance of debugging and troubleshooting
   code in C. There are a multitude of tools to support debugging, such as the use of an IDE
   and other third party software. A widely accepted debugging tool in the programming community
-  is called GDB. <li><a href="https://www.gnu.org/software/gdb/documentation/">Official GDB Website</a></li>
+  is called GDB. <a href="https://www.gnu.org/software/gdb/documentation/">Official GDB Website</a>
 </p>
 
 <h2>
@@ -31,12 +31,12 @@
 <p>
   GDB is a powerful tool that allows you to debug code while it is being executed. Some of the main features
   include:
-  <ol class="listElements">
-    <p> Obtaining the values of variables at any given instance </p>
-    <p> Call functions and reassign variables independent of the program's instructions </p>
-    <p> Identifying the location in which bugs or crashes occur </p>
-  </ol>
 </p>
+  <ol class="listElements">
+    <li> Obtaining the values of variables at any given instance </li>
+    <li> Call functions and reassign variables independent of the program's instructions </li>
+    <li> Identifying the location in which bugs or crashes occur </li>
+  </ol>
 
 <p>
   There are many useful commands to learn in GDB which can all be found through
@@ -48,11 +48,11 @@
   Debugging Mentality
 </h2>
 <p>
-  Even with many tools available to support debugging, it does not neccesarily
+  Even with many tools available to support debugging, it does not necessarily
   provide the required skills to be effective at eliminating bugs. Like any other
   tool, it depends on the competence of the user and how that tool is being utilized.
   Whatever your approach to debugging is, it is important to break down your code into
-  identifable segments to easily distinguish the functional code and the areas in which
+  identifiable segments to easily distinguish the functional code and the areas in which
   potential bugs occur. For example, if a troublesome variable's value is altered through the
   instructions of a function, it is good practice to observe the behavior of the variable
   before and after that function is called. Further extending this process involves the
@@ -61,13 +61,11 @@
   example, GDB can be utilized to set a breakpoint before and after the function is called
   to identify the behavior of the variable and instructions within the function.
 </p>
-<center>
+<div style="text-align: center;">
   <img src="breakPointEx.png" alt="">
 
-  </img>
 
-
-</center>
+</div>
 
 </body>
 </html>
