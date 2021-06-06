@@ -3,9 +3,116 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Arrays in C</title>
+    <link rel="stylesheet" href="../styling/lessons.css">
 </head>
 <body>
+<a href="../index.html">
+    <img alt="" src="freecLessonsIcon.png">
+</a>
 
+<h1 class="textAlignNoColor">
+    Arrays in C
+</h1>
+
+<h2>
+    &nbsp;Introduction
+</h2>
+
+<p>In this section you will learn about one of the most important data structures in C and that is Arrays.
+    This lesson will be split up into subsections so feel free to skip around.</p>
+
+<h2>&nbsp;What is an Array</h2>
+
+<p>An array is a data structure that can contain one type of data type which can include integers, characters (which are also called strings),
+ and structs. An array is like a "bucket set" that can store a defined data type. Below is an visualization of what that
+    an array would look like if stored the numbers 1, 2, 5, 7, 33, 55, 77 into my array.
+</p>
+<h3>&nbsp;Integer Array</h3>
+<!--TODO: Place image here-->
+
+<p>The associated code that is used to make the drawing above would look like...</p>
+
+<pre>
+    int myArray[10]; // Declare an array and define the size of the array
+    myArray[0] = 1;  // The first spot in an Array always starts at index 0
+    myArray[1] = 2;
+    myArray[2] = 5;
+    myArray[3] = 7;
+    myArray[4] = 33;
+    myArray[5] = 55;
+    myArray[6] = 77;
+    // Spots 7, 8, 9, and 10 will all be set to null or '\0' as nothing was filled
+</pre>
+
+
+<p>What we did above was define our array of 10 spots and filled in the numbers we wanted with
+the associated indexes. What makes an array so great is the flexibility of overwriting data at a certain index at any time
+and how it its a central data structure on if you need to store multiple pieces of data at once that all relate to one another.
+</p>
+
+<p>To declare an array the set-up is always...</p>
+
+<pre>
+    type nameVar[size]; // First spot in an array is always 0
+</pre>
+
+<p>Let's do another example, let's say we need to change index 5 to the number 44 instead and retrieve the numbers
+ from indexes 1 to 6 which we will store in a variable to do stuff with, our code would now look like...
+</p>
+
+<pre>
+    myArray[5] = 44
+    for (int i = 1; i < 7; i++) {
+        int myNumber = myArray[i];
+        // myNumber would contain the numbers 2, 5, 7, 33, 44, 77 after each iteration of the for loop
+    }
+</pre>
+
+<p>For our last example of integer arrays, you can also loop though an empty array and define numbers based on a pattern
+    set up up by that loop. To show this let us make an array of size 50 that stores only even numbers. Instead of making
+    our life hard and going to each index one at a time placing each even number in our array, let's use a for
+    loop and a count variable to do our hard work instead.</p>
+
+<pre>
+    int count = 2;
+    int evenNumbers[50];
+    for (int i = 0; i < 50; i++) {
+        evenNumbers[i] = count; // store the even numbers starting from index 0
+        count += 2 // increment by 2
+    }
+</pre>
+<p><strong>Note: It is important to you define a size big enough for the data you want to store, it is okay to
+overestimate the size as it will not break your program. This is important as if you try and access a spot in
+an array that does not exist you will get the error, "index out of bounds" </strong></p>
+
+<h3>&nbsp;Character Array</h3>
+
+<p>In C the equivalent to a string data type is a character array. Treat it the same as a integer array but instead of
+storing integers, we store the data type character instead in which we can manipulate as well. Below is a visualization below
+ of a character array filled with the phrase, "Like a game" </p>
+
+<!--TODO: Place image here-->
+
+
+<p>The associated code that is used to make the drawing above would look like...</p>
+<pre>
+    <!--TODO: start here with the code-->
+
+</pre>
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -193,14 +193,14 @@ based on when we want it to activate. Here is a simple example of how we define 
     // Here we are defining our flag as "False"
     int flag = 0;
     int correctNumberOne = 5;
-    if (correctNumberOne = 5) {
+    if (correctNumberOne == 5) {
         flag = 1;
     }
-    if (flag = 1) {
+    if (flag == 1) {
         // If the flag is set as "True" then we print this statement
         printf("%s","You guessed the correct number");
     }
-    if (flag = 0) {
+    if (flag == 0) {
         // If the flag is set as "False" then we print this statement
         printf("%s","You guessed the incorrect number");
     }
@@ -212,7 +212,7 @@ what we did above by doing...</p>
 <pre>
     int flag = 0;
     int correctNumberOne = 5;
-    if (correctNumberOne = 5) {
+    if (correctNumberOne == 5) {
         flag = !flag;
     }
     if (flag) {
