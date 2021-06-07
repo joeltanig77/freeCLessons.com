@@ -5,3 +5,7 @@
 body {
     background-color: #f0ebcc;
 }
+
+.endLine {
+    border-bottom: 2px solid black;
+}
