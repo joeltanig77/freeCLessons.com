@@ -97,16 +97,67 @@ storing integers, we store the data type character instead in which we can manip
 
 <p>The associated code that is used to make the drawing above would look like...</p>
 <pre>
-    <!--TODO: start here with the code-->
     char myPhrase[15];
     strcpy(myPhrase,"Like a game");
 
+</pre>
+<p>The reason we use strcpy is because we need to iterate the string variable character by character and the built in
+function strcpy does that for us. We will talk more about this in the <a href="lesson6.html">C library lesson</a> </p>
+<p>Just like integer array's you can also do the above examples by iterating through
+a for loop or even overwriting a certain index and changing a letter as you see fit. You can also delete letters
+ of a string by placing a null terminated string. Below is an example of that</p>
 
+<pre>
+    char myPhrase[15];
+    strcpy(myPhrase,"Like a game");
+    for(int i = 7; i < 10; i ++) {
+        myPhrase[i] = "/0";
+    }
+    // myPhrase will now be the string "Like a"
+</pre>
+<p>There are many uses for an array and in later lessons we shall provide challenges that practice these skills of creating
+an array, manipulating an array, and finally using an array</p>
 
+<h2>&nbsp;2D Arrays</h2>
+<p>A 2D array is an array structure that is set up as a "grid". The coordinates of the array are set where the top left
+is represented as the coordinate 0,0 and the bottom right is represented as the [max][max] assuming max is the
+max integer you define as the max size of the 2D array. Below is a drawing of what a 2D array looks like and it's associated
+coordinates. This 2D array we defined as a 3X3 which means our set up is will be a [2][2].</p>
+
+<!--TODO: Place image here-->
+
+<p>Above you can see the grid format with it's associated coordinates and how as you go one down in the column,
+the coordinates goes [1][0] and when you go right of the row starting from [0][0] the coordinates go from [0][1]. From this
+pattern we can see that means the coordinates are represented by [row][col]. In a 2D array it functions just like
+a regular array with it's same properties except you are presented a grid array instead of a linearly aligned bucket array.
+In order to make the 2D array like the one above and fill it in with "7" we need to use a nested for loop and the set up for that is...</p>
+
+<pre>
+    int my2Darray[3][3]; // Create a 2D Array
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            // Fill in the 2D array with the integer 7
+            my2Darray[i][j] = 7;
+        }
+    }
 </pre>
 
+<p>You can also set up a 2D array above by doing...</p>
 
+<pre>
+    int my2Darray[3][3] = {{7,7,7},{7,7,7},{7,7,7}};
+</pre>
 
+<p>Finally we can also index into a 2D array and retrieve values in it like a 1D array. Let's say we need to retrieve
+the last integer value from a 5X5 2D array and print it. This means we want to retrieve the bottom right value of our "grid".
+To do this our code will be...</p>
+<pre>
+    int value = my2Darray[4][4];
+    printf("%d\n","value");
+</pre>
+
+<p>2D arrays are a very powerful tool that can be used to for many things like grid making for a board game or a another
+way to store data. It's up to you on deciding which tool/array is right for you.</p>
 
 </body>
 
