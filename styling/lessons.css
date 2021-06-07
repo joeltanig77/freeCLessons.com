@@ -1,4 +1,6 @@
 .textAlignNoColor {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
     text-align: center;
 }
 
@@ -7,10 +9,5 @@ body {
 }
 
 .endLine {
-    border-bottom: 2px solid black;
-}
-
-.title {
-    border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
