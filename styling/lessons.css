@@ -1,3 +1,7 @@
 .textAlignNoColor {
     text-align: center;
 }
+
+body {
+    background-color: #f0ebcc;
+}
