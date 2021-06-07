@@ -53,7 +53,10 @@
   tool, it depends on the competence of the user and how that tool is being utilized.
   Whatever your approach to debugging is, it is important to break down your code into
   identifiable segments to easily distinguish the functional code and the areas in which
-  potential bugs occur. For example, if a troublesome variable's value is altered through the
+  potential bugs occur.
+</p>
+<p>
+  For example, if a troublesome variable's value is altered through the
   instructions of a function, it is good practice to observe the behavior of the variable
   before and after that function is called. Further extending this process involves the
   application of GDB. With the use of GDB, breakpoints can be set at specified locations
@@ -64,6 +67,20 @@
 <div class="textAlignNoColor">
   <img src="breakPointEx.png" alt="">
 </div>
+<p>
+  The figure above is a visual representation of the previously stated issue. Notice
+  how there are two distinct breakpoints that are addressing the locations of interest.
+  As previously mentioned, this is before <i> and </i> after the troublesome variable is being altered by
+  the function. Using these breakpoints, GDB can be utilized to obtain the value of
+  the variable to understand the behavior throughout the progroam. This is one of many
+  situations in which GDB can be utilized. Although it may be a simple issue, this is an
+  excellent use of a debugger for approaching an issue as such.
+
+  </p>
+  </body>
+
+
+
 
 </body>
 </html>
