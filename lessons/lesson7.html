@@ -1,11 +1,62 @@
-<!--This will be about pointers-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Pointers and Memory Addresses</title>
+  <link rel="stylesheet" href="../styling/lessons.css">
 </head>
 <body>
+  <a href="../index.html">
+  <img  alt="" src="images/freecLessonsIcon.png" >
+</a>
 
-</body>
-</html>
+<h1>
+  Pointers and Memory Addresses
+</h1>
+
+<h2> Introduction </h2>
+<p> In this lesson, you will learn introductory applications of pointers, objects
+  that retain the address of data stored in memory. Pointers are versatile and
+  reliable, allowing you to communicate with variables and objects stored in memory
+  throughout a multitude of <i>scopes</i>. Pointers have many uses and attributes
+  that are not explicitly defined, which causes many misconceptions upon application.
+  Further extending this, pointers at times can work directly with the hardware of
+  the machine it is being executed on. This can open up dangerous situations, such
+  as a pointer attempting to access a block of memory that is reserved for another
+  object or process. Nevertheless, pointers are a fundemental part of C that often
+  is used to distinguish C from other programming languages.
+</p>
+
+<h2> Memory Addresses </h2>
+<p> Before the specifics of pointers are explained, it is important to understand
+  memory addresses and how they apply to variables and objects as a whole. </p>
+<p> Whenever an object or variable is initialized, it is stored at a location in memory.
+  It is not explicit unless the ampersand(&) symbol is called upon the variable. </p>
+<p> For example: </p>
+<pre>
+  int x = 5;
+</pre>
+<p> x is an integer variable with the value of 5. When this variable is initialized through
+  this assignment, the address for the variable x is stored in some destination in memory
+  within the computer. This address location is complicated, but there is more information
+  regarding this in documentation about computer hardware and how programming languages
+  communicate with it directly. Nevertheless, this address can be obtained using
+  ampersand(&) and utilized through the use of pointers.
+
+<h2> Pointer Logic and Conventions </h2>
+<p> A pointer can apply to many different types of variables and objects.
+  When a pointer is initialized, it stores the address of the object it is <i>pointing</i>
+  to. Pointers are defined by declaring a data type and placing an asterisk afterwards,
+  a variable name, and the address of the variable you wish to point to. Utilizing the
+  previous example, a pointer for the variable x can be set up with the following: </p>
+  <pre>
+    int x = 5;
+    int* xPtr = &x;
+  </pre>
+  <p> Now, the pointer xPtr is referencing the variable x in memory. With this direct
+    information, xPtr can be utilized to reference the value of x in a multitude of
+    scopes and operations without worrying about the complications of x being altered or
+    lost. </p>
+
+  <p> A useful application of pointers that fixes a complication with variables involves
+    the use of function arguements. When functions require arguements 
