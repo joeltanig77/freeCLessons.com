@@ -34,7 +34,7 @@
   It is not explicit unless the ampersand(&) symbol is called upon the variable. </p>
 <p> For example: </p>
 <pre>
-  int x = 5;
+  int x = 5; // &x is the memory address of this variable.
 </pre>
 <p> x is an integer variable with the value of 5. When this variable is initialized through
   this assignment, the address for the variable x is stored in some destination in memory
@@ -56,7 +56,55 @@
   <p> Now, the pointer xPtr is referencing the variable x in memory. With this direct
     information, xPtr can be utilized to reference the value of x in a multitude of
     scopes and operations without worrying about the complications of x being altered or
-    lost. </p>
+    lost. To obtain the value of x from the pointer, you must first <i>dereference</i>
+    the pointer with the use of an asterick:  </p>
+<pre>
+  printf("%d", *xPtr); //Print the INTEGER stored in xPtr(Not the address)
+</pre>
 
   <p> A useful application of pointers that fixes a complication with variables involves
-    the use of function arguements. When functions require arguements 
+    the use of function arguements. When functions require arguements, the arguements themselves
+    cannot be altered outside of the scope of the function without the use of pointers. Rather,
+    the function is limited to what it is returning rather than altering the values of the arguements
+    it is being provided. With the use of pointers, a function can alter the value of the object it
+    is being provided <i>and</i> return a value when it is completed.
+  </p>
+
+  <p> Here is an example that elaborates on the complication previously described: </p>
+
+  <pre>
+    int increment(int a, int b){
+      a+=1; //Increment the value of a
+      b+=1; //Increment the value of b
+    }
+
+    int main(){
+      x=3;
+      y=6;
+      increment(x,y);
+      //x and y are unchanged because a and b do not leave the scope of the function.
+    }
+  </pre>
+
+  <p> This presents a situation where the function does not successfully complete
+    the desired operations. It may increment the variables <i>within</i> the function, however,
+    it does not carry these changes to the scope of where it was called from (the main method in this case).
+    Thankfully, pointers can mend this issue by requesting a <i>memory address</i>
+    opposed to an integer.
+  </p>
+
+  <pre>
+    int increment(int* a, int* b){
+      *a+=1; //Dereference a. Increment the value of a
+      *b+=1; //Dereference b. Increment the value of b
+    }
+
+    int main(){
+      x=3;
+      y=6;
+      increment(&x,&y); // 1)Increment requires a pointer to be passed through.
+      //2)Therefore, the address of x and y must be provided to reference the previous variables.
+
+      //x and y ARE changed because they are being passed through as pointers!.
+    }
+  </pre>
