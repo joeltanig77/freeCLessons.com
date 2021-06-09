@@ -63,8 +63,6 @@ knows which type we want to print. We will talk more about why data types like s
 memorize later on but for right now just know that this is how you print in C. %s was not needed for the example above
 as we did not use a variable to concatenate a string but for a more complex program you will see why %s is needed.</p>
 
-<!--TODO: Try and implement compiler later-->
-<!--<div data-pym-src=https://www.jdoodle.com/embed/v0/3lAA></div>-->
 
 
 <h2>&nbsp;Simple Data Types</h2>
@@ -125,13 +123,13 @@ use until later on. This example I described would look like...</p>
 <pre>
     #include &lt;stdio.h&gt
     int main() {
-    // We put 25 inside the brackets so we want to allocate space for at least a 25 string word. This number can be any integer
-    so long as it at least fits the string length you want to store always try and aim for the smallest number that
-    will fit the the string you want to save
-    char str[25];
-    // We do random stuff here but after we do this random stuff...
-    // How do we assign a empty variable called str to a string here?
-    return 0;
+        // We put 25 inside the brackets so we want to allocate space for at least a 25 string word. This number can be any integer
+        so long as it at least fits the string length you want to store always try and aim for the smallest number that
+        will fit the the string you want to save
+        char str[25];
+        // We do random stuff here but after we do this random stuff...
+        // How do we assign a empty variable called str to a string here?
+        return 0;
  }
 </pre>
 <p> If we wanted to assign the variable str after it was assigned as an empty value or "NULL" (which means empty/zero value) we
@@ -142,18 +140,39 @@ can use the function strcpy (string copy) to overwrite the empty value into a va
     #include &lt;stdio.h&gt
     #include &lt;string.h&gt;
     int main() {
-    char str[25];
-    strcpy(str,"Apple");
-    printf("%s\n",str);
-    return 0;
+        char str[25];
+        strcpy(str,"Apple");
+        printf("%s\n",str);
+        return 0;
  }
 </pre>
 <p>For more information on the C library's with these type of built in functions, visit our <a href="lesson5.html">C Library Lesson </a>
 </p>
 
-<!--TODO: start here-->
+
+<div id="mainEditWindow" class="codeEditor">
+</div>
+
+<!--    <div class="codeEditorWrapper">
+        <div class="codeEditorMain">
+            <div class="codeEditorCode"></div>
+        </div>
+        <div class="codeEditorFooterBody">
+            <div class="codeEditorFooterLEFT">
+                <button class="codeEditorButtonRUN">Run</button>
+            </div>
+            <div class="codeEditorFooterRight">
+                <div class="codeEditorConsole">
+                    <ul class="codeEditorConsoleInfo"></ul>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+<button class="runButton">Run</button>
+
+<script src="../aceEditor/ace/ace-editor/src-min/ace.js"></script>
+<script src="../aceEditor/ace/ace-editor/src-min/mode-c_cpp.js"></script>
 <script src="../aceEditor/js/aceEditor.js"></script>
-<script src="../aceEditor/ace/mode/c_cpp.js"></script>
-<script src="../aceEditor/ace/ace.js"></script>
 </body>
 </html>
