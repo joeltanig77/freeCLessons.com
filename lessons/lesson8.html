@@ -24,12 +24,79 @@
 </p>
 
 <h2> Structure Syntax and Specifics </h2>
-<p> Computers like to work in multiples of 4 very often. Due to this, 
+<p> Computers like to work in multiples of 4 bits very often. Due to this,
+the compiler will often add extra padding for the structure for the purpose of
+allignment. This is why invoking the method <code> sizeof() </code> may be
+misleading if padding is not accounted for directly.
+</p>
+<p> A structure can be made by using the abbreviation <code> struct </code>
+  followed by the name of the structure. This creates the structure object
+  and can now be used as an effective variable type. Within the structure,
+  members can be applied to suit the needs of the structure. </p>
+<p> <b>Example:</b>You work for a car rental agency and need to keep track
+  of the vehicles and information regarding the renter. Here are some basic
+  examples of the type of information you might keep track of.</p>
 <pre>
+//This struct will keep track of the renter information
+  struct renter{
+    char name[30]; //The renter's name
+    char phoneNumber[10]; //The renter's phone number
+    char address[60]; //The renter's physical address.
+  }
+//this struct will keep track of the vehicle information and link the renter info.
   struct car{
     int year;
     char model[30];
     char color[30];
-    int gas;
+    renter renterInfo=NULL; //An instance of the renter class. Can be placed within the car.
+    int gas=0;
+  }
+
+</pre>
+
+
+<h2> Utility </h2>
+<p> Now, these two structures can be combined together at the car rental agency
+  to allow Sally to rent her dream car! Here is an example that ensures the information
+  is kept track of securely, and that the car has enough gas for a decent trip!</p>
+<pre>
+  //This struct will keep track of the renter information
+    struct renter{
+      char name[30]; //The renter's name
+      char phoneNumber[10]; //The renter's phone number
+      char address[60]; //The renter's physical address.
+    }
+  //this struct will keep track of the vehicle information and link the renter info.
+    struct car{
+      int year;
+      char model[30];
+      char color[30];
+      renter renterInfo=NULL; //An instance of the renter class. Can be placed within the car.
+      int gas=0;
+    }
+
+  int main(){
+    //Initialize our Renter and her car.
+    struct renter Sally;
+    struct car Ferari;
+
+    //Get Sally's information before she rents the vehicle
+    strcpy(Sally.name, "Sally"); //Copy Sally into the Sally.name member.
+    strcpy(Sally.address, "Happy Street"); //Copy her address into the address member.
+    strcpy(Sally.phoneNumber, 000-000-0000);
+
+    //Input the Ferari's information so it is understood throughout the code
+    Ferari.year=2010;
+    strcpy(Ferari.model, "Ferari");
+    strcpy(Ferari.color, "Red");
+
+    //Sally wants the Ferari!
+
+    Ferari.renterInfo=Sally; //Sally is now a member of the Ferari class.
+    if(renterInfo & gas<50){ //If there is a renter (it is not NULL) and our gas is less than 50...
+      Ferari.gas=600; //Refill gas
+    }
+
+    //You are all set Sally!.
   }
 </pre>
