@@ -1,28 +1,101 @@
+<!DOCTYPE html>
+<!---Print statements and basic data types in C lesson--->
 <html lang="en">
 <head>
-<title>ACE in Action</title>
-<style type="text/css" media="screen">
-    #editor {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-</style>
+    <link rel="stylesheet" href="../styling/lessons.css">
+    <link rel="stylesheet" href="../styling/editorStyling.css">
+    <meta charset="UTF-8">
+    <title>Functions and Recursion</title>
 </head>
 <body>
+<a href="../index.html">
+    <img  alt="" src="images/freecLessonsIcon.png" >
+</a>
 
-<div id="editor">function foo(items) {
-    var x = "All this is syntax highlighted";
-    return x;
-}</div>
+<h1>&nbsp;Functions and Recursion</h1>
+<h2>&nbsp;Introduction</h2>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/c_cpp");
-</script>
+<p>In this section you will learn about the basics of creating functions in order to create code that can be called multiple
+times which can eliminate the usage of <em>spaghetti code</em>. You will also learn about the power of recursion and
+how you can call a function within a function you are running which opens of a huge can or worms of programming logic which can
+all be solved in under 10 lines of code. This lesson will be split up into subsections so feel free to skip around.</p>
+
+
+<h2>&nbsp;Creating a Function</h2>
+<p>The syntax for creating a function is...</p>
+
+<pre>type functionName(args) {}</pre>
+
+<p>The type would be one of the simple data types we covered like int, double, or void. The type you define
+represents the what function is suppose to return at the end of the function. If you return a type that a function was
+not expecting, this will result in an error. The args are what information you are passing into the function,
+so that it can use those pieces of information to run the code defined inside the function.</p>
+
+<p>An example of a function called with a main would be...</p>
+
+<pre>
+    int formula (int a, int b) {
+        // a is myNumber and b is herNumber
+        return (a - b) + 100
+    }
+
+    int main {
+        int myNumber = 10;
+        int herNumber = 25;
+        int answer = formula(myNumber,herNumber);
+        printf("The answer from the formula is %d\n",answer);
+        // Answer would be 115
+    }
+
+</pre>
+
+<p>From the example above, the formula takes two arguments (a and b) and that those values are defined once the functions are called
+with it's arguments. Once the formula function is returned, the program goes back to where the formula was called and saves the return
+value to the variable "answer". Then it finally prints out the answer which is 115. The powerful thing about functions is that I can
+call "formula" anytime I need it without the need to copying and pasting the lines of code that are redundant over
+and over again. This keeps programs modularized and can most definitely help especially on a large scale program
+with many members working on the same code base.</p>
+
+<p>Another example of creating a using functions would be... </p>
+
+<pre>
+    int funkyMath (int a, int b) {
+        int temp = ((a+b) * 32) - ((a*b+55)*9);
+        int ans = temp*temp;
+        return ans;
+    }
+
+    int formula (int a, int b) {
+        // a is myNumber and b is herNumber
+        int ans = funkyMath(a,b);
+        return (ans - b) + 100;
+    }
+    // A void function returns nothing
+    void finalPrint() {
+        printf("The answer from the formula is %d\n",answer);
+    }
+
+    int main {
+        int myNumber = 10;
+        int herNumber = 25;
+        int answer = formula(myNumber,herNumber);
+        finalPrint();
+    }
+
+</pre>
+
+<p>Above is a larger example of how functions can be used which can help as you develop your program. As practice,
+try and find out what number will be printed at the end when the function fully runs.</p>
+
+
+<h2>Recursion</h2>
+
+<p>Recursion is one of the most powerful tools in programming. It grants the ability to solve large complex programming
+ problems instead of 1000 lines of code, to maybe just a mere 3 lines of code all by just calling the function (yourself)
+again. To ease the confusion of (yourself) let's take a look of an simple look on the syntax of recursion...</p>
+
+<pre></pre>
+
+
 </body>
 </html>

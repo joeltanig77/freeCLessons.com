@@ -171,17 +171,35 @@ can use the function strcpy (string copy) to overwrite the empty value into a va
 
 <button class="editor__btn editor__run">Run</button>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js" type="text/javascript" charset="utf-8"></script>
-<script src="../ace-editor/src-min/mode/c_cpp"></script>
 <script src="../aceEditor/ace/ace-editor/src-min/ext-language_tools.js"></script>
 <script>
-    const runButton = document.querySelector('.editor__run');
-    var editor = ace.edit("mainEditWindow");
-    editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/c_cpp");
-    editor.setOptions({
-       enableBasicAutocompletion: true,
-       enableLiveAutocompletion: true,
-    });
+
+    let editorlib = {
+        init() {
+            const runButton = document.querySelector('.editor__run');
+            var editor = ace.edit("mainEditWindow");
+            editor.setTheme("ace/theme/monokai");
+            editor.session.setMode("ace/mode/c_cpp");
+            editor.setOptions({
+                enableBasicAutocompletion: true,
+                enableLiveAutocompletion: true,
+            });
+            runButton.addEventListener('click', () =>{
+                // Get code from user
+                const userCode = editor.getValue();
+
+                // Run code from user
+                try {
+                    console.log(new Function(userCode)());
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+        }
+    }
+    editorlib.init()
+
 
 
 </script>

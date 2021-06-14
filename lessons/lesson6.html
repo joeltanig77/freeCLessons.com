@@ -108,7 +108,7 @@ files in your project so always make sure to import them on top of the files you
     </tr>
     <tr>
         <td>memset</td>
-        <td>takes a source and a size and is used to clear source of "junk" inside source.  </td>
+        <td>takes a source and a size and is used to clear source of "junk" inside source. </td>
     </tr>
     <tr>
         <td>strlen</td>
@@ -116,8 +116,101 @@ files in your project so always make sure to import them on top of the files you
     </tr>
 </table>
 
+<h2>Examples of some &lt;math.h&gt; functions</h2>
 
-<h2></h2>
+<table style="width: 100%">
+    <tr>
+        <th style="text-align-last: left">Function</th>
+        <th style="text-align-last: left">Description</th>
+    </tr>
+    <tr>
+        <td>sqrt</td>
+        <td>finds the square root of the source</td>
+    </tr>
+    <tr>
+        <td>sin</td>
+        <td>computes the sine of the source</td>
+    </tr>
+    <tr>
+        <td>pow</td>
+        <td>computes the pow of the source based on the second arg of what power you pass in</td>
+    </tr>
+    <tr>
+        <td>log10</td>
+        <td>computes the natural log of source</td>
+    </tr>
+    <tr>
+        <td>floor</td>
+        <td>takes the source you pass in and rounds down. EX: floor(5.7) = 5</td>
+    </tr>
+
+</table>
+
+<h2>Examples of some &lt;stdio.h&gt; functions</h2>
+
+<table style="width: 100%">
+    <tr>
+        <th style="text-align-last: left">Function</th>
+        <th style="text-align-last: left">Description</th>
+    </tr>
+    <tr>
+        <td>printf</td>
+        <td>takes the source and prints to stdout</td>
+    </tr>
+    <tr>
+        <td>fclose</td>
+        <td>closes the file/stream</td>
+    </tr>
+    <tr>
+        <td>getc</td>
+        <td>gets the next character from the file you are reading</td>
+    </tr>
+    <tr>
+        <td>remove</td>
+        <td>deletes the given file you pass into source</td>
+    </tr>
+    <tr>
+        <td>fopen</td>
+        <td>opens the file you pass into source using the given mode you pass as into the second argument</td>
+    </tr>
+
+</table>
+
+
+<h2>Examples of some &lt;stdlib.h&gt; functions</h2>
+
+<table style="width: 100%">
+    <tr>
+        <th style="text-align-last: left">Function</th>
+        <th style="text-align-last: left">Description</th>
+    </tr>
+    <tr>
+        <td>malloc</td>
+        <td>Allocates memory and returns a pointer for later use.</td>
+    </tr>
+    <tr>
+        <td>free</td>
+        <td>destroys the allocated memory that was made from malloc, calloc, or realloc. </td>
+    </tr>
+    <tr>
+        <td>calloc</td>
+        <td>Allocates memory, clears junk, and returns a pointer for later use. (Slower than malloc) </td>
+    </tr>
+    <tr>
+        <td>realloc</td>
+        <td>resizes the memory already allocated by malloc or calloc. Takes in the the memory allocated, and the size you want to resize it to</td>
+    </tr>
+    <tr>
+        <td>exit</td>
+        <td>terminates the running program</td>
+    </tr>
+
+</table>
+
+
+
+
+
 
 </body>
 </html>
