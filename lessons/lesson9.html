@@ -13,3 +13,24 @@
 <h1>
   Dynamic Memory
 </h1>
+
+<h2> Introduction </h2>
+<p> In this lesson you will learn about dynamic memory. Up until now, all of the
+  space allocated in memory that you have been learning is known as <i>static allocation</i>.
+  Static allocation is useful because it cleans up after itself when the program exits, but
+  is not as versatile as dynamic memory. For example, if one were to allocate 30 bytes for
+  a name space and a user enters a name more than 30 characters, there would not be enough space
+  to contain their name. This can be mended with the use of dynamic memory. With dynamic memory,
+  the namespace would be able to extend <i>dynamically</i> to the needs of the program, without
+  extending into space that is harmful. </p>
+
+<h2> Dynamic Memory Functions </h2>
+<p> In order to utilize dynamic memory in your program, you must first include
+  the <code>stdlib.h</code> library, as you have previously learned from the
+  <a href="../lessons/lesson6.html">C Library</a></li> lesson. This library
+  provides the required functions for dynamic memory, and it is a staple within
+  the C programming community. </p>
+
+  <h3> Malloc </h3>
+  <p> Malloc is the main memory allocation function. It applies to most circumstances
+    and can easily be called upon any data type desired. </p> 
