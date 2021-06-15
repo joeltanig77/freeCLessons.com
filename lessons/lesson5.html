@@ -94,8 +94,56 @@ try and find out what number will be printed at the end when the function fully 
  problems instead of 1000 lines of code, to maybe just a mere 3 lines of code all by just calling the function (yourself)
 again. To ease the confusion of (yourself) let's take a look of an simple look on the syntax of recursion...</p>
 
-<pre></pre>
+<pre>
+    type recursiveFunction() {
+        baseCase // The case to make the function stop calling itself
+
+        // Statements
+
+        type recursiveFunction // Calls itself
+    }
+
+    int main () {
+        recursiveFunction()
+    }
+</pre>
+
+<p>With the syntax above we will use this format to develop a program that uses recursion to find a
+    <a href="https://www.britannica.com/science/factorial">factorial</a> of a number. Because of how a factorial
+    is calculated, the calculation always changes based on the number you want to find the factorial for which can be many lines of
+    hardcoded code. But thanks to recursion this programming problem can be solved in under 10 lines. The code for calculating
+    the factorial for any number would be...
+</p>
 
 
+<pre>
+    int findFactorial (int a) {
+        if (a == 0 || a == 1) {
+            return 1;
+        }
+        return a*factorial(a-1);
+
+}
+
+    int main () {
+        int userNum = 0;
+        int finalAnswer = 0;
+        printf("%s\n","Enter the number you want to find the factorial of");
+        scanf("%d",&userNum);
+        finalAnswer = findFactorial(userNum);
+        printf("The factorial is %d\n",finalAnswer);
+}
+</pre>
+
+
+<p>This is a classic example of why recursion is so powerful as if we wanted to find the factorial of 5 without using recursion,
+we would have to hard code the formula of 5*4*3*2*1. But with recursion, we do not have to ever hardcode that case, or any other case with a
+larger number to find a factorial as the function will always call itself and stop when the base case hits. Obviously there
+are more cases for recursion in which you will out as you develop more programs but for right now let this newly found
+information sink in because if you like it or not, recursion is one of the most powerful tricks <strong>YOU MUST MASTER.</strong></p>
+
+
+<p>In later lessons we will shall use recursion more often when it comes to more advance data structures in C so stay tuned
+for that.</p>
 </body>
 </html>
