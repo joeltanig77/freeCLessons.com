@@ -1,0 +1,182 @@
+<!--Header lesson-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Headers</title>
+    <link rel="stylesheet" href="../styling/lessons.css">
+</head>
+<body>
+
+<a href="../index.html">
+    <img alt="" src="images/freecLessonsIcon.png" >
+</a>
+
+<h1>&nbsp;Headers</h1>
+
+<h2>&nbsp;Introduction</h2>
+
+<p>In this section you will learn about how header files work in C and how these header files can be used to organize
+large programs in order for code to be modularized for other programmers to use and yourself
+to use. In retrospect, header files are just a include file that takes functions defined by the program and calls them. When the
+function is called, it then calls the functionality from another file and returns as a regular old function. In even more simple
+terms, anytime you create a include statement on top of your c file, it just copy's and paste code that was in the file
+you included.</p>
+
+<h2>&nbsp;Creating a header file</h2>
+<p>In order to create a header file, you must first create a .h file and call it the same name as the the C file you intend
+to have the functionality of your header file functions you define. For example if I wanted to do these steps above I
+would...</p>
+
+<p>In the terminal I would type... if my functionality of my header file would be located in foo.c</p>
+
+<pre>
+    touch foo.h
+</pre>
+
+<p>Next on top of my header file, I need to put...</p>
+<pre>
+    #ifndef FOO_H
+    #define FOO_H
+</pre>
+
+<p>What #ifndef means is "if not defined" what this does is check if the header file is already defined in the C file
+you are trying to implement. The reason you do this is because without this statement the compiler may "double include" code
+which is very bad and can cause many errors and warnings. After the #ifndef we define the header file as FOO_H in
+this case and below define the functions we want to implement for our header file. As an example, let's assume I have
+I have a getWord function that is defined in foo.c that I want to define in my foo.h file. If I wanted to do that I would... </p>
+
+<p>Inside foo.c I see... </p>
+<pre>
+    int getWord(char oneWord[10000], int i, char wordArray[500][500], int *size) {
+        char makeWord[10000];
+        i++;
+        strcpy(makeWord, "Dummy Value");
+        strcpy(oneWord, "Dummy Value");
+        *size += 1;
+        scanf("%s", makeWord);
+        // If the word is == to "zzzzz" stop reading the file
+        if (strcmp(makeWord, "zzzzz") == 0) {
+            return 0;
+        }
+        // If dummy value == dummy value, we are at the end of the text file
+        if (strcmp(makeWord, oneWord) != 0) {
+            strcpy(oneWord, makeWord); // Put one word in the array
+            strcpy(wordArray[i], oneWord);
+            return getWord(oneWord, i, wordArray, size);
+        }
+        return 0;
+    }
+</pre>
+
+<p>I would take the first line of the function and copy it which would be... </p>
+<pre>
+    int getWord(char oneWord[10000], int i, char wordArray[500][500], int *size)
+</pre>
+
+<p>I would finally go back to be header file of foo.h and paste that line with a semicolon. I would
+also comment above above that line to tell other programmers or myself of what that function does.</p>
+
+<pre>
+    /* Gets the word from the text file and stores it into the array */
+    int getWord(char oneWord[10000], int i, char wordArray[500][500], int *size);
+</pre>
+
+<p>For the rest of the header file I would repeat that process until I have included every single function inside foo.c and at the
+end put #endif to conclude the header file. Foo.h would now look like...</p>
+
+<pre>
+    #ifndef FUNC_H
+    #define FUNC_H
+
+    /* Gets the word from the text file and stores it into the array */
+    int getWord(char oneWord[10000], int i, char wordArray[500][500], int *size);
+
+    /* Looks into the array and keeps counts of instances for each word in the array  */
+    int compareArrays(char wordArray[500][500], int instancesOfWords[500], int size);
+
+    /* Clean the junk from the array */
+    int clean2DArray(char array[500][500]);
+    /* Checks if the item in the repeatedWords array is already counted, this is to stop repeated words */
+    int isItInTheArray(char wordArray[500][500], char repeatedWords[500][500], int i);
+
+    /* Clean up the compare array to contain only unique words and counts */
+    int cleanUpCompare(char wordArray[500][500], const int instancesOfWords[500], char repeatedWords[500][500],
+                       int newInstancesOfWords[500], int size, int *newSize);
+
+    /* A helper function that finds the max of the count instance and saves it to the top5RankSize which stores the
+                        count for each word in our UI */
+    int findMax(int newInstancesOfWords[500], int top5RankSize[500], int size, int *i, const int *nextSpot);
+
+    /* Finds the top 5 words and stores them into the array */
+    int
+    topFiveWords(char repeatedWords[500][500], int newInstancesOfWords[500], int top5RankSize[500], int newSize, int size,
+                 int *i, char top5RankWord[500][500]);
+
+    /* Rearranges the array to alphabetical order and prints the word as well as the occurrences */
+    int rearrangeToAlphabetOrderAndPrint(char arrangeToAlphabet[500][500], char organizedToAlphabet[500][500], int size,
+                                                      int top5RankSize[500], int *finalSpot);
+    /* Finds which words has the same number of occurrences and stores the number into an array of top5RankSize */
+    int findSameNumberOfOccurrence(char top5RankWord[500][500], int top5RankSize[500], int size);
+
+    /* A function for printing the UI in the terminal */
+    void printUi();
+
+    #endif
+</pre>
+
+<p>Finally to link both the c file and the header file I need to put the include statement for the header file I just
+fully completed into foo.c. The top of foo.c will finally look like...</p>
+
+<pre>
+    #include &lt;stdio.h&gt;
+    #include &lt;string.h&gt;
+    #include "func.h"
+
+    // Start of functions here
+</pre>
+
+<p>With these steps you can now successfully create a header file and call this file from anywhere with the functionality
+of the linked C file. For example if I wanted to call this file that just contains my main, all I have to do
+is place the include statement (#include "func.h") on top the C file like this...</p>
+
+<pre>
+    #include &lt;stdio.h&gt;
+    #include &lt;string.h&gt;
+    #include "func.h"
+    // This is the main which calls all other functions throughout the program
+    int main() {
+        char oneWord[10000];
+        char wordArray[500][500];
+        char repeatedWords[500][500];
+        char top5RankWord[500][500];
+        int top5RankSize[500];
+        int instancesOfWords[500];
+        int newInstancesOfWords[500];
+        int i = -1;
+        int size = 0;
+        int newSize = 0;
+        printUi();
+        getWord(oneWord, i, wordArray, &size);
+        compareArrays(wordArray, instancesOfWords, size);
+        cleanUpCompare(wordArray, instancesOfWords, repeatedWords, newInstancesOfWords, size, &newSize);
+        topFiveWords(repeatedWords, newInstancesOfWords, top5RankSize, newSize, size, &i, top5RankWord);
+        findSameNumberOfOccurrence(top5RankWord, top5RankSize, size);
+    }
+</pre>
+
+<h3>&nbsp;Practical Usage of Headers</h3>
+
+<p>Anytime you need to develop a large program with many functionality that can relate to each other, it is very important
+to develop header files for them as it will not only help you if you take an extensive break from a program, but also
+to other programmers who may work on the same program as you. With more development in larger programs this skill
+of creating an connecting header files will be the key in becoming not only a skillful programmer but also a
+organized one as well. If you created a C program before, try reorganizing that same program using header
+files as practice.</p>
+
+
+
+
+</body>
+</html>
+

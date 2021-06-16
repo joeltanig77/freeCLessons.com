@@ -146,7 +146,7 @@ can use the function strcpy (string copy) to overwrite the empty value into a va
         return 0;
  }
 </pre>
-<p>For more information on the C library's with these type of built in functions, visit our <a href="lesson5.html">C Library Lesson </a>
+<p>For more information on the C library's with these type of built in functions, visit our <a href="lesson6.html">C Library Lesson </a>
 </p>
 
 
@@ -173,31 +173,41 @@ can use the function strcpy (string copy) to overwrite the empty value into a va
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="../aceEditor/ace/ace-editor/src-min/ext-language_tools.js"></script>
 <script>
-
+    const runButton = document.querySelector('.editor__run');
+    let startCode = '#include <stdio.h>\n' +
+        'int main() {\n' +
+        '   // printf() displays the string inside quotation\n' +
+        '   printf("Hello, World!");\n' +
+        '   return 0;\n' +
+        '}'
+    let editor = ace.edit("mainEditWindow");
     let editorlib = {
         init() {
-            const runButton = document.querySelector('.editor__run');
-            var editor = ace.edit("mainEditWindow");
             editor.setTheme("ace/theme/monokai");
             editor.session.setMode("ace/mode/c_cpp");
             editor.setOptions({
                 enableBasicAutocompletion: true,
                 enableLiveAutocompletion: true,
             });
-            runButton.addEventListener('click', () =>{
-                // Get code from user
-                const userCode = editor.getValue();
 
-                // Run code from user
-                try {
-                    console.log(new Function(userCode)());
-                }
-                catch (err) {
-                    console.error(err);
-                }
-            });
+            editor.setValue(startCode);
         }
     }
+
+    runButton.addEventListener('click', () =>{
+        // Get code from user
+        const userCode = editor.getValue();
+        console.log(userCode);
+        // Run code from user
+        try {
+            console.log(new Function(userCode)());
+        }
+        catch (err) {
+            console.error(err);
+        }
+    })
+
+
     editorlib.init()
 
 
