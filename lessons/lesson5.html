@@ -9,16 +9,19 @@
 </head>
 <body>
 <a href="../index.html">
-    <img  alt="" src="images/freecLessonsIcon.png" >
+    <img alt="" src="images/freecLessonsIcon.png">
 </a>
 
 <h1>&nbsp;Functions and Recursion</h1>
 <h2>&nbsp;Introduction</h2>
 
-<p>In this section you will learn about the basics of creating functions in order to create code that can be called multiple
-times which can eliminate the usage of <em>spaghetti code</em>. You will also learn about the power of recursion and
-how you can call a function within a function you are running which opens of a huge can or worms of programming logic which can
-all be solved in under 10 lines of code. This lesson will be split up into subsections so feel free to skip around.</p>
+<p>In this section you will learn about the basics of creating functions in order to create code that can be called
+    multiple
+    times which can eliminate the usage of <em>spaghetti code</em>. You will also learn about the power of recursion and
+    how you can call a function within a function you are running which opens of a huge can or worms of programming
+    logic which can
+    all be solved in under 10 lines of code. This lesson will be split up into subsections so feel free to skip around.
+</p>
 
 
 <h2>&nbsp;Creating a Function</h2>
@@ -27,9 +30,10 @@ all be solved in under 10 lines of code. This lesson will be split up into subse
 <pre>type functionName(args) {}</pre>
 
 <p>The type would be one of the simple data types we covered like int, double, or void. The type you define
-represents the what function is suppose to return at the end of the function. If you return a type that a function was
-not expecting, this will result in an error. The args are what information you are passing into the function,
-so that it can use those pieces of information to run the code defined inside the function.</p>
+    represents the what function is suppose to return at the end of the function. If you return a type that a function
+    was
+    not expecting, this will result in an error. The args are what information you are passing into the function,
+    so that it can use those pieces of information to run the code defined inside the function.</p>
 
 <p>An example of a function called with a main would be...</p>
 
@@ -49,12 +53,15 @@ so that it can use those pieces of information to run the code defined inside th
 
 </pre>
 
-<p>From the example above, the formula takes two arguments (a and b) and that those values are defined once the functions are called
-with it's arguments. Once the formula function is returned, the program goes back to where the formula was called and saves the return
-value to the variable "answer". Then it finally prints out the answer which is 115. The powerful thing about functions is that I can
-call "formula" anytime I need it without the need to copying and pasting the lines of code that are redundant over
-and over again. This keeps programs modularized and can most definitely help especially on a large scale program
-with many members working on the same code base.</p>
+<p>From the example above, the formula takes two arguments (a and b) and that those values are defined once the
+    functions are called
+    with it's arguments. Once the formula function is returned, the program goes back to where the formula was called
+    and saves the return
+    value to the variable "answer". Then it finally prints out the answer which is 115. The powerful thing about
+    functions is that I can
+    call "formula" anytime I need it without the need to copying and pasting the lines of code that are redundant over
+    and over again. This keeps programs modularized and can most definitely help especially on a large scale program
+    with many members working on the same code base.</p>
 
 <p>Another example of creating a using functions would be... </p>
 
@@ -85,14 +92,15 @@ with many members working on the same code base.</p>
 </pre>
 
 <p>Above is a larger example of how functions can be used which can help as you develop your program. As practice,
-try and find out what number will be printed at the end when the function fully runs.</p>
+    try and find out what number will be printed at the end when the function fully runs.</p>
 
 
 <h2>Recursion</h2>
 
 <p>Recursion is one of the most powerful tools in programming. It grants the ability to solve large complex programming
- problems instead of 1000 lines of code, to maybe just a mere 3 lines of code all by just calling the function (yourself)
-again. To ease the confusion of (yourself) let's take a look of an simple look on the syntax of recursion...</p>
+    problems instead of 1000 lines of code, to maybe just a mere 3 lines of code all by just calling the function
+    (yourself)
+    again. To ease the confusion of (yourself) let's take a look of an simple look on the syntax of recursion...</p>
 
 <pre>
     type recursiveFunction() {
@@ -110,8 +118,10 @@ again. To ease the confusion of (yourself) let's take a look of an simple look o
 
 <p>With the syntax above we will use this format to develop a program that uses recursion to find a
     <a href="https://www.britannica.com/science/factorial">factorial</a> of a number. Because of how a factorial
-    is calculated, the calculation always changes based on the number you want to find the factorial for which can be many lines of
-    hardcoded code. But thanks to recursion this programming problem can be solved in under 10 lines. The code for calculating
+    is calculated, the calculation always changes based on the number you want to find the factorial for which can be
+    many lines of
+    hardcoded code. But thanks to recursion this programming problem can be solved in under 10 lines. The code for
+    calculating
     the factorial for any number would be...
 </p>
 
@@ -136,14 +146,20 @@ again. To ease the confusion of (yourself) let's take a look of an simple look o
 </pre>
 
 
-<p>This is a classic example of why recursion is so powerful as if we wanted to find the factorial of 5 without using recursion,
-we would have to hard code the formula of 5*4*3*2*1. But with recursion, we do not have to ever hardcode that case, or any other case with a
-larger number to find a factorial as the function will always call itself and stop when the base case hits. Obviously there
-are more cases for recursion in which you will out as you develop more programs but for right now let this newly found
-information sink in because if you like it or not, recursion is one of the most powerful tricks <strong>YOU MUST MASTER.</strong></p>
+<p>This is a classic example of why recursion is so powerful as if we wanted to find the factorial of 5 without using
+    recursion,
+    we would have to hard code the formula of 5*4*3*2*1. But with recursion, we do not have to ever hardcode that case,
+    or any other case with a
+    larger number to find a factorial as the function will always call itself and stop when the base case hits.
+    Obviously there
+    are more cases for recursion in which you will out as you develop more programs but for right now let this newly
+    found
+    information sink in because if you like it or not, recursion is one of the most powerful tricks <strong>YOU MUST
+        MASTER.</strong></p>
 
 
-<p>In later lessons we will shall use recursion more often when it comes to more advance data structures in C so stay tuned
-for that.</p>
+<p>In later lessons we will shall use recursion more often when it comes to more advance data structures in C so stay
+    tuned
+    for that.</p>
 </body>
 </html>

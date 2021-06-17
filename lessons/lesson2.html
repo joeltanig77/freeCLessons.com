@@ -7,19 +7,22 @@
     <title>Basic logic in C<</title>
 </head>
 <a href="../index.html">
-    <img  alt="" src="images/freecLessonsIcon.png" >
+    <img alt="" src="images/freecLessonsIcon.png">
 </a>
 <h1>Basic Logic in C</h1>
 <body>
 <h2>&nbsp;Introduction</h2>
-<p>On this page you will learn about Basic logic in C and how these can be solved using if statements, boolean statements,
-while loops and for loops. This lesson will be split up into subsections so feel free to skip around</p>
+<p>On this page you will learn about Basic logic in C and how these can be solved using if statements, boolean
+    statements,
+    while loops and for loops. This lesson will be split up into subsections so feel free to skip around</p>
 
 <h2>&nbsp;If, Elif and Else Statements</h2>
-<p>An If statement is a programming conditional statement that passes if "True", and will run a set of statements/commands right after.
-The If statement can also be deemed as "False", that in which a different set of statements/commands will run. These statements are
-an XOR type which means you will never have this statement be both "True" and "False". Here is one example of an if
-statement in C</p>
+<p>An If statement is a programming conditional statement that passes if "True", and will run a set of
+    statements/commands right after.
+    The If statement can also be deemed as "False", that in which a different set of statements/commands will run. These
+    statements are
+    an XOR type which means you will never have this statement be both "True" and "False". Here is one example of an if
+    statement in C</p>
 <pre>
     int usersNumber = 8;
     if (userNumber == 8) {
@@ -30,9 +33,11 @@ statement in C</p>
     }
 </pre>
 <p>What the code above did was checked if the variable <em>userNumber</em> was equal to the integer 8. Because it was,
-the block inside the curly brackets executed the command which was to print the statement <em>You guessed my number! Go buy a lottery ticket or something!
+    the block inside the curly brackets executed the command which was to print the statement <em>You guessed my number!
+        Go buy a lottery ticket or something!
     </em>. But, if that statement was not true, the else statement would be activated and the print statement of
-<em>You guessed the wrong number</em> would be printed instead. Take note that you can also combine if statements as well like this...
+    <em>You guessed the wrong number</em> would be printed instead. Take note that you can also combine if statements as
+    well like this...
 </p>
 <pre>
     int usersNumber = 10;
@@ -50,12 +55,14 @@ the block inside the curly brackets executed the command which was to print the 
         printf("%s", "10 is my number\n");
     }
 </pre>
-<p> From this example above, the first three if statements will activate with it's associated print statements, but the else
-statement will not activate not unless the usersNumber was a negative number, that in which would trigger that print statement
-and exit the program using exit(0).</p>
+<p> From this example above, the first three if statements will activate with it's associated print statements, but the
+    else
+    statement will not activate not unless the usersNumber was a negative number, that in which would trigger that print
+    statement
+    and exit the program using exit(0).</p>
 </body>
 <p>There is also a conditional statement called <em>elif</em> or else if that activates only once
-and can only be used when chained with other elif or if statements. Here is an example on how elif is used...</p>
+    and can only be used when chained with other elif or if statements. Here is an example on how elif is used...</p>
 <pre>
     int usersNumber = 10;
     if (usersNumber == 8) {
@@ -73,14 +80,15 @@ and can only be used when chained with other elif or if statements. Here is an e
     }
 </pre>
 <p>If we ran this code, the only statement that would have been printed from the terminal is
-<em>"The user's number is greater than 8"</em> and it will never reach <em>The user's number is 10</em>. As stated previously,
+    <em>"The user's number is greater than 8"</em> and it will never reach <em>The user's number is 10</em>. As stated
+    previously,
     elif only runs once in a block of if statements and so if a conditional statement is "True" for a elif,
     it will run that set of commands inside the curly brackets then exit immediately. You will learn quickly as
-you develop programs why elif will later on become your best friend for certain situations.</p>
+    you develop programs why elif will later on become your best friend for certain situations.</p>
 <h3>Nested if statement</h3>
 <p>Finally, you can also nest your if statements, in other words,
     have an if statement inside an if statement. Below is sample code of what a
-nested if statement would look like...</p>
+    nested if statement would look like...</p>
 
 <pre>
     int myNumber1 = 50;
@@ -97,7 +105,7 @@ nested if statement would look like...</p>
 
 <h2>&nbsp;Comparison and Equality Operations</h2>
 <p>In the examples above you may have realized we used equality and comparisons tests
-inside our if statements to make check if the statement would validate to "true" or "false". Below are a table of
+    inside our if statements to make check if the statement would validate to "true" or "false". Below are a table of
     comparisons and equality tests you can use for your if statements or even while loops which will be explained
     more later in this lesson.
 </p>
@@ -144,8 +152,8 @@ inside our if statements to make check if the statement would validate to "true"
     Note: These comparisons directly do not work for strings, to
     check for equality for strings check out our C library lesson.</strong></p>
 <p>Below are some examples of how these comparisons are used in an if statement. Assume we need to make a program
-that took two numbers from the user and printed statements based on how close his guesses were to the
-programs set number</p>
+    that took two numbers from the user and printed statements based on how close his guesses were to the
+    programs set number</p>
 <pre>
     // Let us assume userGuessOne = 5 and userGuessTwo = 10 which we got from taking user input
     int correctNumberOne = 5;
@@ -174,8 +182,8 @@ programs set number</p>
     }
 </pre>
 <p>The example above checks if the number is NOT 25 based on the ! in front of the expression. The ! inverses
-any logical expression so if the statement did evaluate to true, the ! would then evaluate the statement to false.
-This example above is logically the same as...</p>
+    any logical expression so if the statement did evaluate to true, the ! would then evaluate the statement to false.
+    This example above is logically the same as...</p>
 <pre>
     if (userGuessOne != 25) || (userGuessTwo != 25) {
         printf("%s","You did not guess the bad numbers");
@@ -185,9 +193,10 @@ This example above is logically the same as...</p>
 
 <h2>&nbsp;Booleans in C</h2>
 <p>In other programming languages like Java, booleans variables are a value that can store either "true" ot "false".
-In C however, this is possible as well but instead of storing the value as true or false, we use an int type with the
-value 1 or 0 to define true or false in C. We use booleans mainly as a flag which can turn on or off
-based on when we want it to activate. Here is a simple example of how we define and use a boolean</p>
+    In C however, this is possible as well but instead of storing the value as true or false, we use an int type with
+    the
+    value 1 or 0 to define true or false in C. We use booleans mainly as a flag which can turn on or off
+    based on when we want it to activate. Here is a simple example of how we define and use a boolean</p>
 
 <pre>
     // Here we are defining our flag as "False"
@@ -207,7 +216,7 @@ based on when we want it to activate. Here is a simple example of how we define 
 </pre>
 
 <p>We can also do the example code above by just using booleans directly instead of setting it to 1 or 0 like
-what we did above by doing...</p>
+    what we did above by doing...</p>
 
 <pre>
     int flag = 0;
@@ -226,14 +235,15 @@ what we did above by doing...</p>
 </pre>
 
 <p>Booleans are an amazing tool for basic logic and will be used more in the later lessons for when we
-use loops.</p>
+    use loops.</p>
 <p><strong>Note: When comparing a boolean, the integer 1 is defined as "true" and any other number but one will
-be defined as a "false"</strong></p>
+    be defined as a "false"</strong></p>
 
 <h2>&nbsp;While loops</h2>
 <p>Loops are a tool in C or in any programming language that can do tasks a million times over without yourself doing
-a task a million times over. The way you loop things can change the way you solve programming challenges and it takes
-some finesse to try and develop the perfect loop. Here is a simple example of a while loop in action...</p>
+    a task a million times over. The way you loop things can change the way you solve programming challenges and it
+    takes
+    some finesse to try and develop the perfect loop. Here is a simple example of a while loop in action...</p>
 
 <pre>
     int beerCount = 100;
@@ -252,8 +262,8 @@ some finesse to try and develop the perfect loop. Here is a simple example of a 
 </pre>
 
 <p>As you can see above, these loops in are life savors when it comes to doing a command over and over again as
-instead of the programmer doing 100 print statements, the programmer just has to set a while loop
-that sets up the 100 print statements.</p>
+    instead of the programmer doing 100 print statements, the programmer just has to set a while loop
+    that sets up the 100 print statements.</p>
 
 <p>You can also do a while loop that has argument of a boolean variable. Here is an example of that in action...</p>
 
@@ -274,8 +284,9 @@ that sets up the 100 print statements.</p>
 </pre>
 
 <p>Finally, you can also have while loops that loop forever with a while true statement, these statements are used when
-you want to keep doing something until an argument is met and that is when we call a break to stop the while loop from occurring.
-Here is a example of a while true loop in action...</p>
+    you want to keep doing something until an argument is met and that is when we call a break to stop the while loop
+    from occurring.
+    Here is a example of a while true loop in action...</p>
 
 <pre>
     int count = 100;
@@ -291,16 +302,18 @@ Here is a example of a while true loop in action...</p>
 </pre>
 
 <p>As you can see above, we recoded the second example of the while loop but used a while true loop
-instead and used the command break to stop the while loop from happening. In future lessons you will see in detail why
-how these tools like break is useful for future programs you will create.</p>
+    instead and used the command break to stop the while loop from happening. In future lessons you will see in detail
+    why
+    how these tools like break is useful for future programs you will create.</p>
 
-<p><strong>Note: Remember, break statements exit the while loop from the point you create it, make sure you place the break
-properly or else your program may skip parts in your code that you indented to run.</strong></p>
+<p><strong>Note: Remember, break statements exit the while loop from the point you create it, make sure you place the
+    break
+    properly or else your program may skip parts in your code that you indented to run.</strong></p>
 
 
 <h2>&nbsp;For loops</h2>
 <p>A for loop is another type of loop like a while loop that has a starting point and and an end point. Think of it as a
-more advanced while loop that has more control in when it stops. Here is an example of a for loop in action.</p>
+    more advanced while loop that has more control in when it stops. Here is an example of a for loop in action.</p>
 
 <pre>
     for (int i = 0; i < 10; i++) {
@@ -310,7 +323,7 @@ more advanced while loop that has more control in when it stops. Here is an exam
 </pre>
 
 <p>You can also do for loops by comparing an int variable and incrementing by a integer that is not 1
-An example would be...</p>
+    An example would be...</p>
 
 <pre>
     for (int i = 2; i <= 10; i += 2) {
@@ -327,17 +340,22 @@ An example would be...</p>
 </pre>
 <ul>
     <li>The start variable is at what integer you want to for loop to start at</li>
-    <li>The comparison is what compares the start variable to the target integer. If the comparison is "false" at any point
-    the for loop stops</li>
+    <li>The comparison is what compares the start variable to the target integer. If the comparison is "false" at any
+        point
+        the for loop stops
+    </li>
     <li>The incrementer is a counter and you set it to how many you want to increase the incrementer by after
-        each iteration of the for loop. The ++ means increase by one</li>
+        each iteration of the for loop. The ++ means increase by one
+    </li>
 </ul>
 <p>While the for loop can do the exact same things as a while loop, a for loop allows more control and will be used
-often than a whole loop in a program. Based on the situation, you will have to decide what it best for your program, a while loop
-or a for loop.</p>
+    often than a whole loop in a program. Based on the situation, you will have to decide what it best for your program,
+    a while loop
+    or a for loop.</p>
 <h3>&nbsp;Nested For loops</h3>
-<p>You can also nest for loops which is a for loops inside a for loop. These loops are used mainly for 2D arrays which we will talk
-about in the next lesson of Arrays and 2D Arrays. Below is the format of what a nested for loops looks like...</p>
+<p>You can also nest for loops which is a for loops inside a for loop. These loops are used mainly for 2D arrays which
+    we will talk
+    about in the next lesson of Arrays and 2D Arrays. Below is the format of what a nested for loops looks like...</p>
 
 <pre>
     for(start variable, comparison, incrementer) {

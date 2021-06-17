@@ -3,53 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Structures</title>
-  <link rel="stylesheet" href="../styling/lessons.css">
+    <link rel="stylesheet" href="../styling/lessons.css">
 </head>
 <body>
-  <a href="../index.html">
-  <img  alt="" src="images/freecLessonsIcon.png" >
+<a href="../index.html">
+    <img alt="" src="images/freecLessonsIcon.png">
 </a>
 
 <h1>&nbsp;Dynamic Memory</h1>
 
 <h2>&nbsp;Introduction </h2>
 <p> In this lesson you will learn about dynamic memory. Up until now, all of the
-  space allocated in memory that you have been learning is known as <i>static allocation</i>.
-  Static allocation is useful because it cleans up after itself when the program exits, but
-  is not as versatile as dynamic memory. For example, if one were to allocate 30 bytes for
-  a name space and a user enters a name more than 30 characters, there would not be enough space
-  to contain their name. This can be mended with the use of dynamic memory. With dynamic memory,
-  the namespace would be able to extend <i>dynamically</i> to the needs of the program, without
-  extending into space that is harmful. </p>
+    space allocated in memory that you have been learning is known as <i>static allocation</i>.
+    Static allocation is useful because it cleans up after itself when the program exits, but
+    is not as versatile as dynamic memory. For example, if one were to allocate 30 bytes for
+    a name space and a user enters a name more than 30 characters, there would not be enough space
+    to contain their name. This can be mended with the use of dynamic memory. With dynamic memory,
+    the namespace would be able to extend <i>dynamically</i> to the needs of the program, without
+    extending into space that is harmful. </p>
 
 <h2>&nbsp;Dynamic Memory Functions </h2>
 <p> In order to utilize dynamic memory in your program, you must first include
-  the <code>stdlib.h</code> library, as you have previously learned from the
-  <a href="../lessons/lesson6.html">C Library</a></li> lesson. This library
-  provides the required functions for dynamic memory, and it is a staple within
-  the C programming community. </p>
+    the <code>stdlib.h</code> library, as you have previously learned from the
+    <a href="../lessons/lesson6.html">C Library</a></li> lesson. This library
+    provides the required functions for dynamic memory, and it is a staple within
+    the C programming community. </p>
 
-  <h3>&nbsp;Malloc </h3>
-  <p> Malloc is the main memory allocation function. It applies to most circumstances
+<h3>&nbsp;Malloc </h3>
+<p> Malloc is the main memory allocation function. It applies to most circumstances
     and can easily be called upon any data type desired. </p>
-  <p> To put it (not so)simply, Malloc will allocate memory through the use of <i>void pointers</i>. These pointers
+<p> To put it (not so)simply, Malloc will allocate memory through the use of <i>void pointers</i>. These pointers
     can be cast to any data type that your program requires with the use of the right syntaxing. Further extending this,
-    the arguments for malloc require the size of the data type you are attempting to allocate multiplied by the number of
+    the arguments for malloc require the size of the data type you are attempting to allocate multiplied by the number
+    of
     elements of that specific data type Due to the memory being <i> dynamic</i>, it is perfectly valid to only allocate
     enough space for one variable so you do not use up more than you need. An example of this would go as follow for an
-    integer pointer(Note: You can easily allocate more space if you need to store more integers to this pointer with the use of
+    integer pointer(Note: You can easily allocate more space if you need to store more integers to this pointer with the
+    use of
     commands that will be explained shortly):
 </p>
 
 
 <div style="text-align: center;">
-<img src="images/mallocHelp.png" alt="">
+    <img src="images/mallocHelp.png" alt="">
 </div>
 
 <p> In addition to just allocating space for one item, it can be allocated for multiple
-  elements at once. For example, if you wish to allocate memory for 5 integers initially,
-  you would need to invoke the <code> sizeof()</code> method to obtain the size of an integer,
-   and then multiply it by 5. The syntaxing would look something as the following:
+    elements at once. For example, if you wish to allocate memory for 5 integers initially,
+    you would need to invoke the <code> sizeof()</code> method to obtain the size of an integer,
+    and then multiply it by 5. The syntaxing would look something as the following:
 </p>
 <pre>
   int* ptr = (int *)malloc(sizeof(int)*5);

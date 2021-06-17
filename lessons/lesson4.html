@@ -4,124 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <title>Debugging in C</title>
-  <link rel="stylesheet" href="../styling/lessons.css">
+    <link rel="stylesheet" href="../styling/lessons.css">
 </head>
 <body>
-  <a href="../index.html">
-  <img  alt="" src="images/freecLessonsIcon.png" >
+<a href="../index.html">
+    <img alt="" src="images/freecLessonsIcon.png">
 </a>
 
 <h1>
 
-  &nbsp;Debugging and Troubleshooting
+    &nbsp;Debugging and Troubleshooting
 
 </h1>
 
 <h2>
-  &nbsp;Introduction
+    &nbsp;Introduction
 </h2>
 
 <p> In this section you will learn the importance of debugging and troubleshooting
-  code in C. There are a multitude of tools to support debugging, such as the use of an IDE
-  and other third party software. A widely accepted debugging tool in the programming community
-  is called GDB. <a href="https://www.gnu.org/software/gdb/documentation/">Official GDB Website</a>
+    code in C. There are a multitude of tools to support debugging, such as the use of an IDE
+    and other third party software. A widely accepted debugging tool in the programming community
+    is called GDB. <a href="https://www.gnu.org/software/gdb/documentation/">Official GDB Website</a>
 </p>
 
 <h2>
-  &nbsp;GDB
+    &nbsp;GDB
 </h2>
 
 <p>
-  GDB is a powerful tool that allows you to debug code while it is being executed. Some of the main features
-  include:
+    GDB is a powerful tool that allows you to debug code while it is being executed. Some of the main features
+    include:
 </p>
-  <ol class="listElements">
-    <li> Obtaining the values of variables at any given instance </li>
-    <li> Call functions and reassign variables independent of the program's instructions </li>
-    <li> Identifying the location in which bugs or crashes occur </li>
-  </ol>
+<ol class="listElements">
+    <li> Obtaining the values of variables at any given instance</li>
+    <li> Call functions and reassign variables independent of the program's instructions</li>
+    <li> Identifying the location in which bugs or crashes occur</li>
+</ol>
 
 <p>
-  There are many useful commands to learn in GDB which can all be found through
-  the official documentation. Additionally, the manual page (<code> man gdb </code>)
-  can be called upon from the terminal for quick documentation on commands and their uses.
+    There are many useful commands to learn in GDB which can all be found through
+    the official documentation. Additionally, the manual page (<code> man gdb </code>)
+    can be called upon from the terminal for quick documentation on commands and their uses.
 </p>
 
 <h2>
-  &nbsp;Debugging Mentality
+    &nbsp;Debugging Mentality
 </h2>
 <p>
-  Even with many tools available to support debugging, it does not necessarily
-  provide the required skills to be effective at eliminating bugs. Like any other
-  tool, it depends on the competence of the user and how that tool is being utilized.
-  Whatever your approach to debugging is, it is important to break down your code into
-  identifiable segments to easily distinguish the functional code and the areas in which
-  potential bugs occur.
+    Even with many tools available to support debugging, it does not necessarily
+    provide the required skills to be effective at eliminating bugs. Like any other
+    tool, it depends on the competence of the user and how that tool is being utilized.
+    Whatever your approach to debugging is, it is important to break down your code into
+    identifiable segments to easily distinguish the functional code and the areas in which
+    potential bugs occur.
 </p>
 <p>
-  For example, if a troublesome variable's value is altered through the
-  instructions of a function, it is good practice to observe the behavior of the variable
-  before and after that function is called. Further extending this process involves the
-  application of GDB. With the use of GDB, breakpoints can be set at specified locations
-  to obtain the value of the variables at any given point. In the context of the variable
-  example, GDB can be utilized to set a breakpoint before and after the function is called
-  to identify the behavior of the variable and instructions within the function.
+    For example, if a troublesome variable's value is altered through the
+    instructions of a function, it is good practice to observe the behavior of the variable
+    before and after that function is called. Further extending this process involves the
+    application of GDB. With the use of GDB, breakpoints can be set at specified locations
+    to obtain the value of the variables at any given point. In the context of the variable
+    example, GDB can be utilized to set a breakpoint before and after the function is called
+    to identify the behavior of the variable and instructions within the function.
 </p>
-  <div style="text-align: center;">
-  <img src="images/breakPointEx.png" alt="">
+<div style="text-align: center;">
+    <img src="images/breakPointEx.png" alt="">
 </div>
 <p>
-  The figure above is a visual representation of the previously stated issue. Notice
-  how there are two distinct breakpoints that are addressing the locations of interest.
-  As previously mentioned, this is before <i> and </i> after the troublesome variable is being altered by
-  the function. Using these breakpoints, GDB can be utilized to obtain the value of
-  the variable to understand the behavior throughout the progroam. This is one of many
-  situations in which GDB can be utilized. Although it may be a simple issue, this is an
-  excellent use of a debugger for approaching an issue as such.
-  </p>
-  <p>
-<b> General Tips </b>
+    The figure above is a visual representation of the previously stated issue. Notice
+    how there are two distinct breakpoints that are addressing the locations of interest.
+    As previously mentioned, this is before <i> and </i> after the troublesome variable is being altered by
+    the function. Using these breakpoints, GDB can be utilized to obtain the value of
+    the variable to understand the behavior throughout the progroam. This is one of many
+    situations in which GDB can be utilized. Although it may be a simple issue, this is an
+    excellent use of a debugger for approaching an issue as such.
+</p>
+<p>
+    <b> General Tips </b>
 <ol class="listElements">
-  <li> Understand and eliminate one bug at a time. Attempting to eliminate
-  numerous bugs at the same time can cause confusion and can create more bugs. </li>
-  <li> If you are working with others, ask clarifying questions about their program
-  before attempting to alter significant changes. A competent programmer will
-  be able to describe how their program operates. </li>
-  <li> Do not assume that everything works as intended. Be curious about the
-  behavior of your code to ensure it works correctly </li>
-  <li> If the bug occurs under certain situations, attempt to replicate
-  that bug using a variety of parameters. In other words, make sure your program
-  works for <i> all cases</i>. </li>
-  <li> Temporary solutions are not meant to hold up. Document them well if you
-  absolutely have to leave them in so you can apply a permanent fix in future edits. </li>
+    <li> Understand and eliminate one bug at a time. Attempting to eliminate
+        numerous bugs at the same time can cause confusion and can create more bugs.
+    </li>
+    <li> If you are working with others, ask clarifying questions about their program
+        before attempting to alter significant changes. A competent programmer will
+        be able to describe how their program operates.
+    </li>
+    <li> Do not assume that everything works as intended. Be curious about the
+        behavior of your code to ensure it works correctly
+    </li>
+    <li> If the bug occurs under certain situations, attempt to replicate
+        that bug using a variety of parameters. In other words, make sure your program
+        works for <i> all cases</i>.
+    </li>
+    <li> Temporary solutions are not meant to hold up. Document them well if you
+        absolutely have to leave them in so you can apply a permanent fix in future edits.
+    </li>
 </ol>
 
 
-  </body>
+</body>
 <h2>
-  &nbsp;Understanding Documentation
+    &nbsp;Understanding Documentation
 </h2>
 
 <p> The C programming language is powerful, but there are times where it may
-  work against you if you do not understand some specifics.
+    work against you if you do not understand some specifics.
 </p>
 <p>
-  It is important to read documentation on syntax and operations that are
-  not clear to prevent bugs from occurring. It is a common mistake to continue
-  to work on your program without occasionally checking the functionality of
-  the logic, syntax, and intended operations.
+    It is important to read documentation on syntax and operations that are
+    not clear to prevent bugs from occurring. It is a common mistake to continue
+    to work on your program without occasionally checking the functionality of
+    the logic, syntax, and intended operations.
 </p>
 <p>To improve your skills as a debugger
-  you must also extend your reach as a troubleshooter. Before tools such as GDB
-  are utilized to eliminate bugs, you should hopefully know what the operations
-  in your program are attempting to accomplish rather than implementing a segments
-  without reason. If an operation is unclear or you have suspicions about the
-  functionality of a segment, it is strongly advised to take a step back to
-  grasp an understanding of the code in question.
+    you must also extend your reach as a troubleshooter. Before tools such as GDB
+    are utilized to eliminate bugs, you should hopefully know what the operations
+    in your program are attempting to accomplish rather than implementing a segments
+    without reason. If an operation is unclear or you have suspicions about the
+    functionality of a segment, it is strongly advised to take a step back to
+    grasp an understanding of the code in question.
 </p>
 <p>
-  In other words, using resources and manual pages is highly advised
-  before jumping into the process of debugging.
+    In other words, using resources and manual pages is highly advised
+    before jumping into the process of debugging.
 
 
 </p>
@@ -129,21 +134,21 @@
 <h2> &nbsp;Closing Thoughts </h2>
 
 <p>
-  To conclude, this lesson is merely the surface of what it takes to be a good
-  debugger and troubleshooter. There are many things to learn, but the most
-  important thing to take away is that these skills do not develop right away.
+    To conclude, this lesson is merely the surface of what it takes to be a good
+    debugger and troubleshooter. There are many things to learn, but the most
+    important thing to take away is that these skills do not develop right away.
 </p>
 <p>
-  There are many things to consider when attempting to eliminate bugs and errors,
-  so developing the mentality for the revision of your program can take considerable
-  effort at first glance. There are many strategies and approaches to debugging/troubleshooting
-  and I hope this lesson provided some insight in regards to the expectations of
-  these issues. If you are interested in further applications of debugging,
-  check out the <i> Advanced Debugging </i> section where issues such as memory leaks
-  are also included.
+    There are many things to consider when attempting to eliminate bugs and errors,
+    so developing the mentality for the revision of your program can take considerable
+    effort at first glance. There are many strategies and approaches to debugging/troubleshooting
+    and I hope this lesson provided some insight in regards to the expectations of
+    these issues. If you are interested in further applications of debugging,
+    check out the <i> Advanced Debugging </i> section where issues such as memory leaks
+    are also included.
 </p>
 
-<p class="endLine">  </p>
+<p class="endLine"></p>
 
 
 </html>

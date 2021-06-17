@@ -24,8 +24,10 @@
 
 <h2>&nbsp;What is an Array</h2>
 
-<p>An array is a data structure that can contain one type of data type which can include integers, characters (which are also called strings),
- and structs. An array is like a "bucket set" that can store a defined data type. Below is an visualization of what that
+<p>An array is a data structure that can contain one type of data type which can include integers, characters (which are
+    also called strings),
+    and structs. An array is like a "bucket set" that can store a defined data type. Below is an visualization of what
+    that
     an array would look like if stored the numbers 1, 2, 5, 7, 33, 55, 77 into my array.
 </p>
 <h3>&nbsp;Integer Array</h3>
@@ -47,8 +49,10 @@
 
 
 <p>What we did above was define our array of 10 spots and filled in the numbers we wanted with
-the associated indexes. What makes an array so great is the flexibility of overwriting data at a certain index at any time
-and how it its a central data structure on if you need to store multiple pieces of data at once that all relate to one another.
+    the associated indexes. What makes an array so great is the flexibility of overwriting data at a certain index at
+    any time
+    and how it its a central data structure on if you need to store multiple pieces of data at once that all relate to
+    one another.
 </p>
 
 <p>To declare an array the set-up is always...</p>
@@ -58,7 +62,7 @@ and how it its a central data structure on if you need to store multiple pieces 
 </pre>
 
 <p>Let's do another example, let's say we need to change index 5 to the number 44 instead and retrieve the numbers
- from indexes 1 to 6 which we will store in a variable to do stuff with, our code would now look like...
+    from indexes 1 to 6 which we will store in a variable to do stuff with, our code would now look like...
 </p>
 
 <pre>
@@ -70,7 +74,8 @@ and how it its a central data structure on if you need to store multiple pieces 
 </pre>
 
 <p>For our last example of integer arrays, you can also loop though an empty array and define numbers based on a pattern
-    set up up by that loop. To show this let us make an array of size 50 that stores only even numbers. Instead of making
+    set up up by that loop. To show this let us make an array of size 50 that stores only even numbers. Instead of
+    making
     our life hard and going to each index one at a time placing each even number in our array, let's use a for
     loop and a count variable to do our hard work instead.</p>
 
@@ -83,14 +88,15 @@ and how it its a central data structure on if you need to store multiple pieces 
     }
 </pre>
 <p><strong>Note: It is important to you define a size big enough for the data you want to store, it is okay to
-overestimate the size as it will not break your program. This is important as if you try and access a spot in
-an array that does not exist you will get the error, "index out of bounds" </strong></p>
+    overestimate the size as it will not break your program. This is important as if you try and access a spot in
+    an array that does not exist you will get the error, "index out of bounds" </strong></p>
 
 <h3>&nbsp;Character Array</h3>
 
 <p>In C the equivalent to a string data type is a character array. Treat it the same as a integer array but instead of
-storing integers, we store the data type character instead in which we can manipulate as well. Below is a visualization below
- of a character array filled with the phrase, "Like a game" </p>
+    storing integers, we store the data type character instead in which we can manipulate as well. Below is a
+    visualization below
+    of a character array filled with the phrase, "Like a game" </p>
 
 <!--TODO: Place image here-->
 
@@ -102,10 +108,11 @@ storing integers, we store the data type character instead in which we can manip
 
 </pre>
 <p>The reason we use strcpy is because we need to iterate the string variable character by character and the built in
-function strcpy does that for us. We will talk more about this in the <a href="lesson6.html">C library lesson</a> </p>
+    function strcpy does that for us. We will talk more about this in the <a href="lesson6.html">C library lesson</a>
+</p>
 <p>Just like integer array's you can also do the above examples by iterating through
-a for loop or even overwriting a certain index and changing a letter as you see fit. You can also delete letters
- of a string by placing a null terminated string. Below is an example of that</p>
+    a for loop or even overwriting a certain index and changing a letter as you see fit. You can also delete letters
+    of a string by placing a null terminated string. Below is an example of that</p>
 
 <pre>
     char myPhrase[15];
@@ -115,22 +122,27 @@ a for loop or even overwriting a certain index and changing a letter as you see 
     }
     // myPhrase will now be the string "Like a"
 </pre>
-<p>There are many uses for an array and in later lessons we shall provide challenges that practice these skills of creating
-an array, manipulating an array, and finally using an array</p>
+<p>There are many uses for an array and in later lessons we shall provide challenges that practice these skills of
+    creating
+    an array, manipulating an array, and finally using an array</p>
 
 <h2>&nbsp;2D Arrays</h2>
 <p>A 2D array is an array structure that is set up as a "grid". The coordinates of the array are set where the top left
-is represented as the coordinate 0,0 and the bottom right is represented as the [max][max] assuming max is the
-max integer you define as the max size of the 2D array. Below is a drawing of what a 2D array looks like and it's associated
-coordinates. This 2D array we defined as a 3X3 which means our set up is will be a [2][2].</p>
+    is represented as the coordinate 0,0 and the bottom right is represented as the [max][max] assuming max is the
+    max integer you define as the max size of the 2D array. Below is a drawing of what a 2D array looks like and it's
+    associated
+    coordinates. This 2D array we defined as a 3X3 which means our set up is will be a [2][2].</p>
 
 <!--TODO: Place image here-->
 
 <p>Above you can see the grid format with it's associated coordinates and how as you go one down in the column,
-the coordinates goes [1][0] and when you go right of the row starting from [0][0] the coordinates go from [0][1]. From this
-pattern we can see that means the coordinates are represented by [row][col]. In a 2D array it functions just like
-a regular array with it's same properties except you are presented a grid array instead of a linearly aligned bucket array.
-In order to make the 2D array like the one above and fill it in with "7" we need to use a nested for loop and the set up for that is...</p>
+    the coordinates goes [1][0] and when you go right of the row starting from [0][0] the coordinates go from [0][1].
+    From this
+    pattern we can see that means the coordinates are represented by [row][col]. In a 2D array it functions just like
+    a regular array with it's same properties except you are presented a grid array instead of a linearly aligned bucket
+    array.
+    In order to make the 2D array like the one above and fill it in with "7" we need to use a nested for loop and the
+    set up for that is...</p>
 
 <pre>
     int my2Darray[3][3]; // Create a 2D Array
@@ -149,15 +161,16 @@ In order to make the 2D array like the one above and fill it in with "7" we need
 </pre>
 
 <p>Finally we can also index into a 2D array and retrieve values in it like a 1D array. Let's say we need to retrieve
-the last integer value from a 5X5 2D array and print it. This means we want to retrieve the bottom right value of our "grid".
-To do this our code will be...</p>
+    the last integer value from a 5X5 2D array and print it. This means we want to retrieve the bottom right value of
+    our "grid".
+    To do this our code will be...</p>
 <pre>
     int value = my2Darray[4][4];
     printf("%d\n","value");
 </pre>
 
 <p>2D arrays are a very powerful tool that can be used to for many things like grid making for a board game or a another
-way to store data. It's up to you on deciding which tool/array is right for you.</p>
+    way to store data. It's up to you on deciding which tool/array is right for you.</p>
 
 </body>
 

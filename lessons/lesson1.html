@@ -9,18 +9,19 @@
 </head>
 <body>
 <a href="../index.html">
-    <img  alt="" src="images/freecLessonsIcon.png" >
+    <img alt="" src="images/freecLessonsIcon.png">
 </a>
 <h1>&nbsp;Print Statements and Basic Data Types in C</h1>
 <h2>&nbsp;Introduction</h2>
 <p>Welcome to the first lesson on C. On this page, you will learn about the syntax of C, simple data
-types, how to compile C code, how to print in the terminal, and how to define a variable. This lesson will
-be split up into subsections so feel free to skip around.</p>
+    types, how to compile C code, how to print in the terminal, and how to define a variable. This lesson will
+    be split up into subsections so feel free to skip around.</p>
 
 
-<p>First lets start of with something relatively simple and that is printing a statement in C. You can follow along if you want
+<p>First lets start of with something relatively simple and that is printing a statement in C. You can follow along if
+    you want
     by making a new C file and typing in the C code we are about to write. The first thing we need
-to do is write a main function which is what your program will run first. The function will look like...</p>
+    to do is write a main function which is what your program will run first. The function will look like...</p>
 
 <pre>
     #include &lt;stdio.h&gt
@@ -28,66 +29,81 @@ to do is write a main function which is what your program will run first. The fu
     printf("%s","Hello World\n");
     return 0;
  }</pre>
-<p>   Because this is a very simple program, we will only use the main
+<p> Because this is a very simple program, we will only use the main
     but note that you can create other functions that can be called in main.
     For more information about functions, visit our functions lesson.
     Also don't worry about what the include statement or what the %s is doing, just know that we
-    need it in order to use the print function and to print a string in C. Also to note that the "\n" indicates that we want
-    to print a new line after "Hello World". We can then run it by opening our terminal and cd all the way to our program.
+    need it in order to use the print function and to print a string in C. Also to note that the "\n" indicates that we
+    want
+    to print a new line after "Hello World". We can then run it by opening our terminal and cd all the way to our
+    program.
     Once we are in the folder of our program we can type this into
-    our terminal...(note you must have <a href="https://gcc.gnu.org/install/index.html">gcc</a> installed for this to work)
+    our terminal...(note you must have <a href="https://gcc.gnu.org/install/index.html">gcc</a> installed for this to
+    work)
 </p>
 <pre>gcc -g -std=c99 -Wall -pedantic -o insertAnyName yourNameOfYourFile.c</pre>
-<p>What the line above is doing is it is calling the gcc compiler and passes the -g flag for "debugging" which you can learn
-more on our <a href="lesson4.html">debugging</a> lesson.</p> Then we pass in the -std=c99 flag to tell gcc that we want to compile a c99 program.
-We then call -Wall and -pedantic to tell gcc that we want to look out for all errors in our code and all warnings in our code as
-well. Finally we call the -o flag and pass in the parameters <em>insertAnyName</em> and <em>yourNameOfYourFile.c</em> which converts your c
+<p>What the line above is doing is it is calling the gcc compiler and passes the -g flag for "debugging" which you can
+    learn
+    more on our <a href="lesson4.html">debugging</a> lesson.</p> Then we pass in the -std=c99 flag to tell gcc that we
+want to compile a c99 program.
+We then call -Wall and -pedantic to tell gcc that we want to look out for all errors in our code and all warnings in our
+code as
+well. Finally we call the -o flag and pass in the parameters <em>insertAnyName</em> and <em>yourNameOfYourFile.c</em>
+which converts your c
 code with the flags/preferences you passed in, and turn it into an object file called <em>insertAnyName</em> in which
 you can finally run as the user.
 <p>We finally run the program by typing in this in our terminal</p>
 <pre>./insertAnyName</pre>
-<p>After doing this you should get the output of "Hello World" on the terminal. Congrats you made your first program! Below
+<p>After doing this you should get the output of "Hello World" on the terminal. Congrats you made your first program!
+    Below
     are more examples of how printf can be used.</p>
 
 <h3>Print Statements using an integer and a string</h3>
 <p>Above we printed a string of "Hello World". If you wanted to print an integer and a string together, we can edit
-the above code to say...</p>
+    the above code to say...</p>
 <pre>
     #include &lt;stdio.h&gt
     int main() {
     printf("My favorite number is %d\n", 94);
     return 0;
  }</pre>
-<p>Again to note a %s is equal to a string format and  %d is equal to a decimal/integer formatter which is how C
-knows which type we want to print. We will talk more about why data types like strings and integers are so important to
-memorize later on but for right now just know that this is how you print in C. %s was not needed for the example above
-as we did not use a variable to concatenate a string but for a more complex program you will see why %s is needed.</p>
-
+<p>Again to note a %s is equal to a string format and %d is equal to a decimal/integer formatter which is how C
+    knows which type we want to print. We will talk more about why data types like strings and integers are so important
+    to
+    memorize later on but for right now just know that this is how you print in C. %s was not needed for the example
+    above
+    as we did not use a variable to concatenate a string but for a more complex program you will see why %s is
+    needed.</p>
 
 
 <h2>&nbsp;Simple Data Types</h2>
 <h3>Characters</h3>
 <p>A character in C is a single byte like a number, symbol or a letter. For more information about bytes visit the byte
-lesson for more information.</p>
+    lesson for more information.</p>
 <h3>&nbsp;Strings</h3>
 <p>If you did the following exercise above you might have recognized why we did "" on the printf statement. The reason
-that is needed is because the "" means that the letters inside we are dealing with are a String datatype.
-A String datatype is an array of characters that ends with a null terminator of '\0'. This terminator is important as it tells
-the program the string has ended and it does not need to look further for more data. This fine detail will be important for lessons
-later on for other functions like strlen (string length) and scanf. </p>
+    that is needed is because the "" means that the letters inside we are dealing with are a String datatype.
+    A String datatype is an array of characters that ends with a null terminator of '\0'. This terminator is important
+    as it tells
+    the program the string has ended and it does not need to look further for more data. This fine detail will be
+    important for lessons
+    later on for other functions like strlen (string length) and scanf. </p>
 <h3>&nbsp;Integers</h3>
 <p>An integer just like in math is a whole number that can be positive, negative, or a zero. As long as it does not have
-a decimal, the number is stated to be a integer datatype. Example include 100, 234, and -38462. <strong> Warning: integers
-    can be strings  if you allow it to be, be careful on where you wrap your quotations. If they are wrapped in
-    quotations, they will follow the rules of strings and you will not be able to do math with them. </strong> </p>
+    a decimal, the number is stated to be a integer datatype. Example include 100, 234, and -38462. <strong> Warning:
+        integers
+        can be strings if you allow it to be, be careful on where you wrap your quotations. If they are wrapped in
+        quotations, they will follow the rules of strings and you will not be able to do math with them. </strong></p>
 <h3>&nbsp;Doubles</h3>
-<p>A double is a number that contains a decimal point. They can contain up to 15 digits in total and you can do math with this type. If you want
-to print a double, you can do that by using the %f format specifier when you are using printf</p>
+<p>A double is a number that contains a decimal point. They can contain up to 15 digits in total and you can do math
+    with this type. If you want
+    to print a double, you can do that by using the %f format specifier when you are using printf</p>
 <h3>&nbsp;Variables</h3>
 <p>Like all programing languages, a variable is a storage location that
-    is paired with a name which stores data that can be known or unknown to the programmer. Think of it as storage container
-that can update as the program runs and hits certain cases like an <a href="lesson2.html">if statement.</a>
-If you want to create a variable named myNumber that stores a integer, you can do that by doing...</p>
+    is paired with a name which stores data that can be known or unknown to the programmer. Think of it as storage
+    container
+    that can update as the program runs and hits certain cases like an <a href="lesson2.html">if statement.</a>
+    If you want to create a variable named myNumber that stores a integer, you can do that by doing...</p>
 <pre>
     #include &lt;stdio.h&gt
     int main() {
@@ -106,7 +122,8 @@ If you want to create a variable named myNumber that stores a integer, you can d
 </pre>
 <p>The "\n" represents a new line character and it is important to include it especially if you
     are printing multiple print statements as you always want to space them out.
-    If you want to create a variable that stores a string and a double that gets printed, you can do that by doing...</p>
+    If you want to create a variable that stores a string and a double that gets printed, you can do that by
+    doing...</p>
 <pre>
     #include &lt;stdio.h&gt
     int main() {
@@ -117,9 +134,11 @@ If you want to create a variable named myNumber that stores a integer, you can d
  }
 </pre>
 <p>For assigning a string variable in C it is important to allocate the amount of space the string will take up.
-In the above example, we can see that we did not do this as it was not needed because we were directly assigning it to
-to the variable called string right away. But what happens if we wanted to make an empty string variable that we will not
-use until later on. This example I described would look like...</p>
+    In the above example, we can see that we did not do this as it was not needed because we were directly assigning it
+    to
+    to the variable called string right away. But what happens if we wanted to make an empty string variable that we
+    will not
+    use until later on. This example I described would look like...</p>
 <pre>
     #include &lt;stdio.h&gt
     int main() {
@@ -132,8 +151,10 @@ use until later on. This example I described would look like...</p>
         return 0;
  }
 </pre>
-<p> If we wanted to assign the variable str after it was assigned as an empty value or "NULL" (which means empty/zero value) we
-can use the function strcpy (string copy) to overwrite the empty value into a value we want. The above example will now look like...
+<p> If we wanted to assign the variable str after it was assigned as an empty value or "NULL" (which means empty/zero
+    value) we
+    can use the function strcpy (string copy) to overwrite the empty value into a value we want. The above example will
+    now look like...
 </p>
 
 <pre>
@@ -146,7 +167,8 @@ can use the function strcpy (string copy) to overwrite the empty value into a va
         return 0;
  }
 </pre>
-<p>For more information on the C library's with these type of built in functions, visit our <a href="lesson6.html">C Library Lesson </a>
+<p>For more information on the C library's with these type of built in functions, visit our <a href="lesson6.html">C
+    Library Lesson </a>
 </p>
 
 
@@ -194,22 +216,20 @@ can use the function strcpy (string copy) to overwrite the empty value into a va
         }
     }
 
-    runButton.addEventListener('click', () =>{
+    runButton.addEventListener('click', () => {
         // Get code from user
         const userCode = editor.getValue();
         console.log(userCode);
         // Run code from user
         try {
-            console.log(new Function(userCode)());
-        }
-        catch (err) {
+            console.log(eval(userCode));
+        } catch (err) {
             console.error(err);
         }
     })
 
 
     editorlib.init()
-
 
 
 </script>

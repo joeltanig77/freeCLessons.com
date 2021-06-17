@@ -1,10 +1,88 @@
+<!--Makefile lesson-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Makefile</title>
+    <link rel="stylesheet" href="../styling/lessons.css">
 </head>
 <body>
+
+<a href="../index.html">
+    <img alt="" src="images/freecLessonsIcon.png">
+</a>
+
+<h1>&nbsp;Makefile</h1>
+
+<h2>&nbsp;Introduction</h2>
+
+
+<p>In this section you will learn about the basics of creating and running a Makefile in order to run your C program.
+    While you may have been using gcc to run your programs though the terminal, this process can be annoying and quite
+    tiresome
+    as it requires you to type the same command over and over again if you do change one part of your program. However,
+    with
+    a Makefile this process makes it so you can store any commands you want to insert into the terminal including gcc
+    all
+    by just typing on the word Make into the terminal. This lesson will be split up into subsections so feel free
+    to skip around.</p>
+
+<h2>&nbsp;Creating a Makefile</h2>
+<p>Creating a Makefile is very easy. On your terminal go into the directory of your program and in the terminal
+    type... </p>
+
+<pre>
+    touch Makefile
+</pre>
+
+<p>This creates a Makefile and you are now ready to edit the Makefile how ever you want.</p>
+
+
+<h2>Editing a Makefile</h2>
+<p>Go ahead and edit the Makefile and copy and paste the commands you did in order to compile and run your C program.
+    For example if my command for compiling was...</p>
+
+<pre>
+    gcc -g -std=c99 -Wall -pedantic -o insertAnyName yourNameOfYourFile.c
+</pre>
+
+<p>and the running command was...</p>
+
+<pre>
+    ./insertAnyName
+</pre>
+
+<p>My Makefile would then look like...</p>
+
+<pre>
+    yourNameOfYourFile:
+         gcc -g -std=c99 -Wall -pedantic -o insertAnyName yourNameOfYourFile.c
+    run:
+        ./insertAnyName
+</pre>
+
+<p>With that you have created a super basic Makefile. Now if I wanted to compile my code I just make to type...</p>
+
+<pre>
+    make
+</pre>
+
+<p>Into my terminal and if I wanted to run my program I just have to type...</p>
+
+<pre>
+    make run
+</pre>
+
+<p>Makefiles are SUPER smart and know if you need to compile at all or not based on if you even changed your code.
+    You also don't have to type make before you make run as if you try and run the code before compiling it will
+    automatically
+    try and compile the code and then run.</p>
+
+<h2>More information about Makefiles</h2>
+<p>This lesson does not even scratch the surface of the power of a Makefile and for more information on an in depth look
+    of Makefiles for your future programs visit <a href="https://makefiletutorial.com/">this</a> website which does an
+    AMAZING job on explaining make files </p>
+
 
 </body>
 </html>
