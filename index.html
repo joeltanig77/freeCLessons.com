@@ -1,65 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styling/index.css">
+    <link href="styling/bootstrap.min.css" rel="stylesheet">
     <style>
-        .column {
-            width: 50%;
-            float: left;
-        }
-
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
+        .navbar{
+            margin-bottom:0;
+            border-radius:0;
         }
     </style>
-    <meta charset="UTF-8">
-    <title>freeCLessions</title>
+    <title>Home</title>
 </head>
-<body class="mainBody">
-<a href="index.html">
-    <img alt="" src="lessons/images/freecLessonsIcon.png">
-</a>
-
-
-<p id="aboutButton"><a href="misc/about.html">About</a></p>
-<div class="row">
-    <div class="column" style="background-color: #3d84b8">
-
-
-        <div class="boxElement">
-            <h2 class="chapters">Introduction to C</h2>
-            <p class="moreInfo"> This module is for beginners of programming/C, who need a introduction of the language
-                and the syntax of what C provides </p>
-            <ol class="listElements">
-                <li><a href="lessons/lesson1.html">Print Statements and Basic Data Types</a></li>
-                <li><a href="lessons/lesson2.html">Basic Logic</a></li>
-                <li><a href="lessons/lesson3.html">Arrays and 2D Arrays</a></li>
-                <li><a href="lessons/lesson5.html">Functions and Recursion</a></li>
-                <li><a href="lessons/lesson4.html">Debugging and Troubleshooting </a></li>
-                <li><a href="lessons/lesson6.html">C Library</a></li>
-            </ol>
-            <h2 class="chapters">Intermediate Lessons</h2>
-            <ol class="listElements">
-                <li><a href="lessons/lesson10.html">Headers</a></li>
-                <li><a href="lessons/lesson7.html">Pointers and Memory Addresses</a></li>
-                <li><a href="lessons/lesson8.html">Structures</a></li>
-                <li><a href="lessons/lesson9.html">Dynamic Memory</a></li>
-                <li><a href="lessons/lesson11.html">C Program Structure</a></li>
-                <li><a href="lessons/lesson12.html">Makefiles</a></li>
-            </ol>
-            <h2 class="chapters">Arithmetic</h2>
-            <p class="moreInfo">Put lessons here</p>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">freeClessons.com</a>
         </div>
 
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+                <li><a href="misc/about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
     </div>
-    <!--    This is for the right col if needed all you have to do is uncomment below -->
-    <!--    <div class="column" style="background-color:#3d84b8">
-            <h2>Column 2</h2>
-            <p class="moreInfo">More stuff</p>
-        </div>-->
+</nav>
+
+<!-- JUMBOTRON -->
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1>Welcome To freeCLessons.com</h1>
+        <p>A beginner website for those who want to get started in C or programming</p>
+    </div>
 </div>
+
+
+<div class="container">
+<h1 class="pagination">Introduction to C</h1>
+    <p> This module is for beginners of programming/C, who need a introduction of the language
+        and the syntax of what C provides</p>
+
+    <div class="list-group">
+        <a href="lessons/lesson1.html" class="list-group-item">Print Statements and Basic Data Types</a>
+        <a href="lessons/lesson2.html" class="list-group-item">Basic Logic</a>
+        <a href="lessons/lesson3.html" class="list-group-item">Arrays and 2D Arrays</a>
+        <a href="lessons/lesson5.html" class="list-group-item">Functions and Recursion</a>
+        <a href="lessons/lesson4.html" class="list-group-item">Debugging and Troubleshooting</a>
+        <a href="lessons/lesson6.html" class="list-group-item">C Library</a>
+    </div>
+
+
+    <h1 class="pagination">Intermediate Lessons</h1>
+    <p>This module is programmers who are ready to take the next step and learn about the true powers of C</p>
+    <div class="list-group">
+        <a href="lessons/lesson10.html" class="list-group-item">Headers</a>
+        <a href="lessons/lesson7.html" class="list-group-item">Pointers and Memory Addresses</a>
+        <a href="lessons/lesson8.html" class="list-group-item">Structures</a>
+        <a href="lessons/lesson9.html" class="list-group-item">Dynamic Memory</a>
+        <a href="lessons/lesson11.html" class="list-group-item">C Program Structure</a>
+        <a href="lessons/lesson12.html" class="list-group-item">Makefiles</a>
+    </div>
+
+
+
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
 <footer>Copyright <a href="misc/about.html">Joel Tanig</a>, <a href="misc/about.html">Desi Ah Yek</a> 2021</footer>
 
 </body>
