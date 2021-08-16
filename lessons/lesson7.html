@@ -55,15 +55,15 @@
     information, xPtr can be utilized to reference the value of x in a multitude of
     scopes and operations without worrying about the complications of x being altered or
     lost. To obtain the value of x from the pointer, you must first <i>dereference</i>
-    the pointer with the use of an asterick:  </p>
+    the pointer with the use of an asterisk:  </p>
 <pre>
   printf("%d", *xPtr); //Print the INTEGER stored in xPtr(Not the address)
 </pre>
 
   <p> A useful application of pointers that fixes a complication with variables involves
-    the use of function arguements. When functions require arguements, the arguements themselves
+    the use of function arguments. When functions require arguments, the arguments themselves
     cannot be altered outside of the scope of the function without the use of pointers. Rather,
-    the function is limited to what it is returning rather than altering the values of the arguements
+    the function is limited to what it is returning rather than altering the values of the arguments
     it is being provided. With the use of pointers, a function can alter the value of the object it
     is being provided <i>and</i> return a value when it is completed.
   </p>
@@ -106,3 +106,5 @@
       //x and y ARE changed because they are being passed through as pointers!.
     }
   </pre>
+
+  <p class="endLine"></p>
